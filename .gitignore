@@ -1,0 +1,19 @@
+# LaTeX build artefacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
