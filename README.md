@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧬 Helicase
+# Helicase 🧬
 
 ### Uncertainty-Guided Supply Chain Knowledge Graph Construction with Autonomous Multi-Agent LLMs
 
