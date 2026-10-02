@@ -1,5 +1,22 @@
 # Validation record — software, not new paper experiments
 
+## Local Q4 archive evaluation — 2026-10-02
+
+- Software suite: **81 passed** (`PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p no:capture`). The clean public package was separately verified: **80 passed, 1 skipped**; the skipped case requires the intentionally unpublished private batch driver.
+- Requested evaluator: `gpt-5.5`, medium reasoning, using the existing Codex/ChatGPT login. No server model snapshot is attested by the CLI.
+- Common report extraction: **140/140** validated graphs. First pass accepted 125; separate quote repairs and one exact-triple deduplication recovered the other 15. Original outputs, changes and edge aliases are retained.
+- Citation collection: all **484** URLs have retained outcomes; **426** usable after access-denial screening, 58 failed or blocked.
+- Native Helicase Q4 evidence judgments: **1,008/1,008**; 85 supported, 2 contradicted, 921 unresolved. These are current-excerpt LLM assessments, not human truth labels.
+- Conditional calibration: 87 binary-assessed edges (**8.63% coverage**, 15 queries). Brier 0.052989; ECE 0.157471. Query-cluster bootstrap uses 2,000 resamples; full-population algebraic bounds are reported separately.
+- Integrity audit revalidated all 1,008 labels, 484 page outcomes and **1,081 completed CLI invocation records**, including extraction repairs. One reconnect event followed by a complete answer was recovered after explicit inspection; its original rejection remains on disk. CLI internal attempts and billing are not independently attested.
+- All nine protected original core/archive files retain their initial hashes.
+- Human materials: 400 blank independent rating forms with 324 linked source snapshots. No human ratings were fabricated.
+- JSON, CSV, LaTeX, SVG/PDF/PNG figures, original traces and a Chinese completion report are saved locally under the ignored private output directory.
+
+**The full research goal remains incomplete:** graph F1 requires author-confirmed reference graphs; human agreement requires real independent ratings; original-agent repeats, n=1 and strict four-system token/tool-budget experiments have not run; held-out provenance remains missing. No 240-run job was launched, and no local results were published by this execution.
+
+## Original upstream tooling validation
+
 - Full added-tool test suite: **46 passed** (`python -m pytest -q`).
 - Python compilation check: passed.
 - Actual uploaded archive: 7 methods × 80 = 560 input records imported.

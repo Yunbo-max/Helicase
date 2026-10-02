@@ -239,3 +239,38 @@ python -m reviewer_analysis.revision_v2 --help
 若需完整工程复现，按你已可工作的环境安装原工程依赖；本包 requirements 只安装新增分析工具，不伪造或替换缺失的 `helix_core`。本地单元/模拟测试通过不等于真实API、真实运行时间、预算公平或新实验结果已验证。
 
 Ctrl-C 会终止当前付费子进程并记录 interrupted。出现已知的配额/规划失败日志时标记 needs_review 并停止批次；这只是保守的异常检查，不保证识别后端所有部分失败。
+
+本地运行器还会检查已导出行动和运行时保留的行动结果：`failed`、未完成行动、
+`success=False`、内部搜索返回的错误项均会触发 `needs_review`。部分结果保留在
+`records.jsonl`，不得当作正常成功样本或静默剔除。超时会终止子进程并保存脱敏后的
+`worker.log`。这些检查不修改原 agent 的决策或错误处理，也不保证发现所有隐性失败。
+
+`search_n1` 限制的是每个外层搜索行动生成的查询变体数量；单个 Searcher 内部仍可
+多轮搜索和读取页面。它不等于“一次实际搜索 API 调用”，也不构成 token/tool 预算匹配。
+
+## 9. 通过已登录 Codex 使用 GPT-5.5
+
+评估命令支持 `REVIEW_JUDGE_BACKEND=codex`，无需另配 OpenAI API key，但必须已在
+本机 Codex 登录并可使用 `gpt-5.5`。它使用该账户的 Codex/ChatGPT 额度。配置示例：
+
+```dotenv
+REVIEW_JUDGE_BACKEND=codex
+REVIEW_JUDGE_MODEL=gpt-5.5
+REVIEW_CODEX_TIMEOUT=600
+```
+
+将配置放在本地 `private/gpt55.env`，然后沿用 `extract`、`judge`、`match` 命令，
+把 `--env-file private/.env` 替换成该文件路径。模型固定为 GPT-5.5、medium reasoning；
+不会自动改用 Qwen 或其他模型。引用网页读取仍是独立步骤。
+
+每次调用在输出目录的 `calls/` 下保存提示词、最终回答、原始事件和退出记录；调用目录
+权限为 0700。原始事件与回答可能包含完整研究文本，不应公开提交。模型工具、联网搜索、
+插件和项目指令已关闭；异常工具事件、缺少用量或不完整调用会拒收。
+报告引文和事实引文继续由本地代码检查；不合格输出也保留，不能作为有效图或人工标签。
+
+这个通道的 `api_calls` 字段计数的是 CLI 调用，不是可独立核对的 HTTP 请求数。
+CLI 返回 token 用量，但不返回可核实的底层模型快照，也没有此实现可强制的 provider
+输出 token 上限。因此它可用于模型辅助补评估，不能据此宣称四系统严格 token 预算匹配。
+
+已生成的清单锁定输入、提示词和客户端配置。更换后端或提示词时使用新的输出目录，
+不要把早期试跑与后续版本混为同一个预先冻结的实验。

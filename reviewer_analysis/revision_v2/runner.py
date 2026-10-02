@@ -95,6 +95,30 @@ def stop_child(proc):
         return proc.communicate()
 
 
+def native_failure_flags(raw, runtime_actions=()):
+    """Inspect both exported actions and richer in-memory results without editing the agent."""
+    flags = set()
+    actions = list(raw.get('actions') or []) + list(runtime_actions or [])
+    for index, action in enumerate(actions):
+        def field(name, default=None):
+            return action.get(name, default) if isinstance(action, dict) else getattr(action, name, default)
+        ident = redact(str(field('id', index)))
+        status = field('status')
+        if status in ('failed', 'pending', 'running'):
+            flags.add(f'action:{ident}:status:{status}')
+        result = field('result') or {}
+        if not isinstance(result, dict):
+            continue
+        if result.get('success') is False:
+            flags.add(f'action:{ident}:unsuccessful_result')
+        answers = (result.get('metadata') or {}).get('individual_answers') or []
+        failed = sum(isinstance(answer, str) and answer.lstrip().startswith('[Error:')
+                     for answer in answers)
+        if failed:
+            flags.add(f'action:{ident}:failed_inner_searches:{failed}/{len(answers)}')
+    return sorted(flags)
+
+
 def repeat(questions,out,runtime_root,backend_root=None,runs=3,variants=('full',),ids=None,
            execute=False,max_jobs=1,wall_seconds=3600,seed=268226721,dataset_role='existing_scqa',single_model=False):
     if runs<1 or max_jobs<1 or wall_seconds<1:raise ValueError('Positive run/job/time caps required')
@@ -150,15 +174,22 @@ def repeat(questions,out,runtime_root,backend_root=None,runs=3,variants=('full',
             except subprocess.TimeoutExpired:
                 if os.name=='posix':os.killpg(proc.pid,signal.SIGKILL)
                 else:proc.kill()
-                output,_=proc.communicate();raise TimeoutError('Native query exceeded wall-clock cap')
+                output,_=proc.communicate()
+                (directory/'worker.log').write_text(redact(output or ''),encoding='utf8')
+                raise TimeoutError('Native query exceeded wall-clock cap')
             (directory/'worker.log').write_text(redact(output),encoding='utf8')
             ok=proc.returncode==0 and (directory/'result.json').is_file()
             markers=('rate limit exhausted','Φ_gen failed','no actions completed this iteration','all search queries failed')
             flags=[m for m in markers if m.lower() in output.lower()]
-            state=('needs_review' if flags else 'returned') if ok else 'error'
+            native_flags=[]
+            if ok:
+                record=json.loads((directory/'result.json').read_text())
+                native_flags=record.get('execution',{}).get('native_failure_flags',[])
+            state=('needs_review' if flags or native_flags else 'returned') if ok else 'error'
             write_json(status,{'status':state,'detected_failure_markers':flags,'returncode':proc.returncode,
+                               'native_failure_flags':native_flags,
                                'elapsed_seconds':time.monotonic()-start,'ended_at':utcnow()})
-            if not ok or flags:break  # Do not burn the full batch on failed or partial calls.
+            if not ok or flags or native_flags:break  # Retain partial output and stop the batch.
         except KeyboardInterrupt:
             if proc is not None:
                 text,_=stop_child(proc)
@@ -206,13 +237,15 @@ def native_worker(job_path):
     write_json(out/'resolved_config.json',cfg)
     t=time.monotonic();raw=orchestrator.run(job['query']['question'])
     write_json(out/'native_output.json',raw)
+    failures=native_failure_flags(raw,getattr(orchestrator,'all_actions',()))
     from .archive import normalize_record
     raw=dict(raw,id=job['query']['query_id'],quadrant=job['query']['quadrant'],question=job['query']['question'],
-             status='native_returned',elapsed_seconds=time.monotonic()-t)
+             status='needs_review' if failures else 'native_returned',elapsed_seconds=time.monotonic()-t)
     record=normalize_record(raw,'Helicase' if job['variant']=='full' else 'Helicase-search_n1',job['run_id'])
     record['execution']={'freeze_sha256':job['freeze_sha256'],'seed':job['seed'],
         'dataset_role':job['dataset_role'],'token_count':None,'tool_calls':None,
         'matched_token_tool_budget':False,'native_termination_reason':'not_exposed_by_backend',
+        'native_failure_flags':failures,
         'warning':'A native return can include incomplete actions; inspect worker.log and actions. Not a factual-success assertion.'}
     write_json(out/'result.json',record)
 
