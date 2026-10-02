@@ -1,28 +1,30 @@
-# Helicase revision tools v2
+# Helicase revision tools v2 — continue from the completed evaluation
 
-[中文运行指南](README_ZH.md) | [Evaluation protocol](EXPERIMENT_PROTOCOL.md) | [Software validation](VALIDATION.md)
+**Start here: [只做剩余任务 / Remaining tasks](README_ZH.md).**
 
-Reuse the original SCQA dataset and saved outputs first. This directory does not alter the core Helicase algorithm, the dataset, or historical results. Nothing starts a full rerun automatically.
+[Full command reference, preserved](README_FULL_ZH.md) · [Recorded validation](VALIDATION.md) · [Evaluation protocol](EXPERIMENT_PROTOCOL.md)
 
-From the repository root, in your Python 3.10+ environment:
+Reuse the original SCQA dataset, original reference graphs and saved outputs. Do not restart completed extraction, page collection or primary-judge assessment.
+
+The validation record at commit `83d7f07` reports 140 completed common-report extractions, 484 retained page outcomes, and 1,008 native-edge labels. Only 87 edges have binary assessments, so the reported ECE/Brier describe that conditional subset, not the full graph. Detailed outputs remain local/private; the record is not a fresh inspection of those outputs.
+
+## Remaining work, in order
+
+| Task | Inputs | New model work |
+|---|---|---|
+| Q4 matching and paired statistics | Existing 140 extracted graphs + author-confirmed original reference graphs | Up to 140 matching tasks; no new extraction or agent execution |
+| Unresolved-label diagnostics | Final primary labels, item payloads and cached pages | None; an offline example is in the remaining-task guide |
+| Bounded alternative-judge check | Frozen sample and exactly the same evidence payloads | Suggested cap: 200 sampled facts, after a two-item interface check |
+| Human audit / reference documentation | Existing blank forms and author records | Not replaceable by API calls |
+| Agent repeats / matched-budget controls | Existing configurations and raw records first | Still unresolved; not automatically launched by this guide |
+
+The Chinese guide gives commands for existing `match`, `paired`, `judge` and `analyse` entry points, completion criteria, and explicit local preparation requirements. Secondary sampling and cross-model agreement preparation are requirements, **not new CLI subcommands**. Do not treat `analyse` as an automatic inter-judge agreement calculation.
 
 ```bash
 git pull --ff-only origin main
-python -m pip install -r reviewer_analysis/revision_v2/requirements.txt
-python -m pytest -q
 python -m reviewer_analysis.revision_v2 --help
 ```
 
-Start offline; replace the archive path with your own file:
+For first-time setup only, use the preserved full reference. Do not repeat `prepare` merely because the README changed.
 
-```bash
-python -m reviewer_analysis.revision_v2 prepare \
-  --archive /path/to/results.zip \
-  --out reviewer_analysis/revision_v2/private/archive_v2
-```
-
-Use a new output directory if one already exists. The supplied archive is read, not overwritten. No API key is needed for this step.
-
-For API-backed evaluation, copy `.env.example` into `private/.env` and set the judge endpoint, model and key there. For native repeats, your complete local `helicase` and `helix_core` source packages and search credentials are also required. Do not commit secrets or raw data.
-
-The native runner is serial. `--max-jobs` is a launch-count cap, not concurrency. Paid commands require `--execute`. Only `full` and `search_n1` are connected native variants; the strict four-method matched-budget comparison is a protocol, not a completed runner. Tests use synthetic fixtures and mocked API responses, not paid live experiments.
+No core algorithm, dataset, original result, primary label, prompt or runtime code is changed by this documentation update. Network-backed commands still require `--execute`. The native runner is serial: `--max-jobs` limits launches, not concurrency. Keep credentials, raw research records, page text and login traces in ignored private directories.

@@ -1,276 +1,276 @@
-# Helicase / IJPR 268226721：补实验运行包 v2
+# Helicase / IJPR 268226721：只做剩余任务
 
-这是一组独立工具，放在 `reviewer_analysis/revision_v2/`。**不修改 `helicase/`、`helix_core/`、旧结果或旧分析脚本。** Python 3.10+。本包不含你的未公开运行源码、密钥、原始结果或真实 gold graphs。
+**先读本页，不要再从完整指南的 `prepare` 开始重跑。保留原 SCQA、原 reference、已完成输出和 Helicase 核心算法。**
 
-**先复用原 SCQA 和已保存结果。** 此工具包不要求更换数据集，也不会自动启动全量重跑。先运行离线检查，再按缺少的证据选择评估或重复运行。
+[完整命令手册（保留原版）](README_FULL_ZH.md) · [本次已报告的运行记录](VALIDATION.md) · [实验协议](EXPERIMENT_PROTOCOL.md)
 
-## 先分清：什么已经可运行，什么不能只靠一个 key 解决
+本页以提交 `83d7f07b269fb7d5b11d6fb7c4c5e9846bb29c3f` 的 `VALIDATION.md` 为依据。详细新结果仍在你的本地 `private/`，未随 GitHub 提交公开。本页是接续工作清单，不是再次独立核验了那些本地原始结果。
 
-| 工作 | 本包入口 | 还需要什么 | 是否重新运行主 agent |
-|---|---|---|---|
-| 旧结果导入、非法分数与引用解析检查 | `prepare` | 你原来的 `results.zip` | 否，无 API |
-| 所有方法按同一报告抽取视图重新评估 | `extract` → `match` | judge API + 完整、版本化 reference graphs | 否 |
-| 引文页面文本收集 | `pages` | 网络；Jina key 可选 | 否；只读取已引用 URL，不用 Serper 搜索 |
-| 事实级证据判定、ECE/Brier/可靠性图/查询聚类 CI | `judge` → `analyse` | 已保存页面 + judge API；强验证还需人类标签 | 否 |
-| 400 条原始 KG 边的盲审与 IAA | `human-forms` → 两人独立填写 → `agreement` | 真实专家，不是 LLM 代签 | 否 |
-| Helicase 固定配置下独立重复 | `repeat --variants full` | **完整本地 `helicase` 和 `helix_core`** + LLM/Serper | 是 |
-| 固定 n=1 功能控制 | `repeat --variants full,search_n1` | 同上；可以只跑 Q4 | 是 |
-| 同模型、同实际 token/tool cap 的 Full/no-UQ/ReAct/ToT 比较 | `EXPERIMENT_PROTOCOL.md` | 原 baseline/no-UQ 运行入口及可观测后端调用计数 | **本包没有伪装成已接通** |
-| 真 held-out | 使用新 question manifest 后 `repeat` | 冻结后新题、独立标注与时间证据，或既有未用测试集历史 | 是，不能随机拆旧 80 题冒充 |
+## 0. 哪些已完成，不再原样运行
 
-`extract/match` 是**新定义的 v2 evaluator**，不是找回了历史 evaluator。优先找回原 evaluator/gold。无法找回时，统一使用并披露新协议，重算所有比较；不要把新分数冒充对旧数字的逐位复现。
+| 阶段 | 运行记录中的状态 | 接下来怎么做 |
+|---|---|---|
+| 旧结果导入 | 7 个方法 × 80 题；原始文件保留 | 复用现有 `records.jsonl` / `facts.jsonl` |
+| Q4 `extract` | 140/140 份通过检查的报告图；修复过程保留 | 使用最终已验收的抽取结果，不重新抽取 |
+| `pages` | 484 个 URL 都有结果；426 可用，58 失败或受阻 | 复用经筛查的快照，不全量重抓 |
+| 主 Judge | 1,008 条边：85 supported、2 contradicted、921 unresolved | 复用最终标签、逐项记录和 manifest |
+| `analyse` | 87 条二元可判边；覆盖率 8.63%，15 个 query；Brier 0.052989，ECE 0.157471 | 保留为**可判定子集的条件校准**，不是全图校准 |
+| 人工材料 | 400 条空白独立评分表已生成 | 交给真实专家填写，不重新生成相同表 |
 
-## 1. 安装与密钥
+**新标签并非说明旧 SCQA 无效。未判定（unresolved）不等于错误；图结构或引文字符串通过检查，也不等于世界事实已经验证。**
 
-在本地 `Helicase` 仓库更新代码后，使用原来可运行的 Python 环境：
+只安排下面三项接续工作：
+
+1. **原 Q4 reference 接入 → `match` → 统计。** 没有完整原 reference 时先暂停这一项，不重新做数据集，不让模型从预测答案生成 gold。
+2. **现有 unresolved 的离线诊断。** 零 API；先查已有记录，不为提高支持率而重跑主 Judge。
+3. **冻结有限样本 → 第二个真实模型评估 → 一致性检查。** 复用相同证据，不重复搜索。下面给出最多 200 条的建议预算，不是 reviewer 指定的样本数。
+
+**本页没有任何自动 `repeat`、全量抓取、改写标签或自动付费循环。**
+
+## 1. 先定位已有文件，别用新的空目录代替已完成结果
+
+在仓库根目录操作。若有未提交修改，先检查 `git status`，不要用 reset/clean 覆盖本地工作。
 
 ```bash
 git pull --ff-only origin main
-python -m pip install -r reviewer_analysis/revision_v2/requirements.txt
-mkdir -p reviewer_analysis/revision_v2/private
-cp reviewer_analysis/revision_v2/.env.example reviewer_analysis/revision_v2/private/.env
-```
-
-编辑 `private/.env`。包内 `.gitignore` 会排除整个 `private/`。不要把 `results.zip`、页面原文或实际 key 放到待提交代码目录之外的未忽略路径。
-
-**沿用原来的 SiliconFlow 配置时，填 `SILICONFLOW_API_KEY`，不是另买一个所谓 Qwen 专属 key。** Qwen 是模型，SiliconFlow 是你调用模型的服务商。`SERPER_API_KEY` 用于原 agent 搜索。Jina Reader 基础读取可无 key，但批量限速和你原 backend 的配置可能要求 `JINA_API_KEY`。Native backend 的具体要求仍须在本地核实。
-
-重新评分使用 `REVIEW_JUDGE_BASE_URL`、`REVIEW_JUDGE_MODEL`、`REVIEW_JUDGE_KEY_ENV`。同一个 SiliconFlow 账户可以作为这个客户端的凭证来源。模型 ID 必须填写你账户当前可用的准确 ID。`.env.example` 的 native IDs 来自历史源码，**没有通过实时 API 验证仍可用**。不要换成“最新模型”后与旧运行合并成相同配置。
-
-阿里云 Model Studio 的 key 与 SiliconFlow key 不通用。选择阿里云时，judge 使用相应地域的兼容 endpoint，并设置 `REVIEW_JUDGE_KEY_ENV=DASHSCOPE_API_KEY`。native 工厂虽有 provider 自动识别，缺失的 `helix_core` 适配器未在这里实测。
-
-建议 shell 变量（后面的命令在同一个 terminal 执行）：
-
-```bash
 V=reviewer_analysis.revision_v2
 P=reviewer_analysis/revision_v2/private
-ENVFILE="$P/.env"
+
+# 只列路径；不要打印或上传 .env、登录记录、API keys。
+find "$P" -type f \( -name 'results.jsonl' -o -name 'labels.jsonl' \
+  -o -name 'facts.jsonl' -o -name 'pages.jsonl' -o -name 'manifest.json' \
+  -o -name 'calibration.json' \) -print
 ```
 
-## 2. 先执行完全离线检查
+按自己的真实路径填写。以下路径是占位说明，**不是宣称本地就叫这些名字**。不要把 125 份首轮结果误当成修复后的 140 份；不要只读取首次失败的记录。
 
 ```bash
-python -m "$V" prepare --archive /你的路径/results.zip --out "$P/archive_v2"
-python -m "$V" --env-file "$ENVFILE" doctor --purpose judge
+export FACTS='/你的真实路径/facts.jsonl'
+export EXTRACTED='/已验收的140份抽取图/results.jsonl'
+export REFERENCE='/原始完整Q4参考图/reference_q4.jsonl'
+export PRIMARY_LABELS='/主Judge最终标签/labels.jsonl'
+export PRIMARY_ITEMS='/主Judge最终逐项记录/items'
+export PRIMARY_MANIFEST='/主Judge对应配置/manifest.json'
+export PAGES='/主Judge实际使用的筛查后快照/pages.jsonl'
+export ENVFILE='/本地匹配Judge配置.env'
+export ALT_ENVFILE='/本地第二模型配置.env'
+export REMAIN="$P/remaining_v1"
 ```
 
-`prepare` 只读取 7 个主实验 `scpqa_*.jsonl` 文件以及对应汇总评估文件，只取原 SCQA 的 1–80 号问题。它不解压任意 ZIP 路径；忽略 Iran、其他案例、浏览器版 deep-research 结果和未知成员。7 个系统逐题问题文本不一致时直接报错。
+`PRIMARY_ITEMS` 必须与 `PRIMARY_LABELS` 属于同一个最终评估版本。若私有批处理器另有修复账本/目录，先按原有账本定位最终记录，**保留原记录，不能为通过检查直接改标签**。本页的诊断示例会拒绝标签与逐项记录不一致。
 
-输出：`records.jsonl`、`questions.jsonl`（仅问题，不含 gold）、`facts.jsonl`、`source_urls.jsonl`、`audit.json`。保存输入和成员 SHA-256。**不把汇总 precision、截断 reference 字符串变成 gold graph；不 clip 非法评分。**
+## 2. 先完成 Q4 match：不重复 extract
 
-导入在本次真实归档上已运行：7 × 80 = 560 个记录；Helicase Q4 1,008 条边，其中 992 带引用 ID、969 可解析到至少一个已保存 URL。这只是本地引用解析，不是页面支持率。
+### 输入与停止条件
 
-## 3. Q4 统一重新评分（优先级最高）
-
-### 3.1 报告抽取：全部方法走同一条路线
+- 使用原来经作者确认的 Q4 reference；需要完整实体、关系、query ID、版本及适用范围。只做格式转换，不从预测图补造 reference。
+- 使用 7 个方法 × 20 题的同一报告抽取视图。不要将某些方法改为 native KG 后与 narrative 抽取混算。
+- reference schema、匹配定义和模型配置在匹配前冻结。逐对一对一匹配后由 Python 计数。
+- 本流程是新统一 evaluator，不冒充已恢复历史 evaluator。原 evaluator 找回后应核对差异。
 
 ```bash
-# 无 --execute：只显示计划，不调用 API。
-python -m "$V" --env-file "$ENVFILE" extract \
-  --records "$P/archive_v2/records.jsonl" --quadrants Q4 \
-  --out "$P/extract_v2" --max-calls 2
+MATCH_OUT="$REMAIN/q4_match_v1"
 
-# 抽取图通常比事实标签长，给足输出上限。这里只是上限，不是费用报价。
-REVIEW_JUDGE_MAX_TOKENS=16384 python -m "$V" --env-file "$ENVFILE" extract \
-  --records "$P/archive_v2/records.jsonl" --quadrants Q4 \
-  --out "$P/extract_v2" --max-calls 2 --execute
-```
-
-检查 `extract_v2/items/` 的原始返回、图和引用原报告的逐字片段。输出被截断、JSON 错误、伪造片段或非法图都会报错并停止，不拿残缺返回评分。确认环境正确后，**保持同一输入和设置**再次运行、将 `--max-calls` 提高到 140，可完成这批 20 × 7 报告。已有成功项不重付费；失败项保留，不自动尝试直到得到好分数。
-
-模型不见 method 名称、gold 或 native confidence。新图不继承原生节点/边 uncertainty。**统一报告评分与原生边校准是两个不同对象，不能凭相似名字把 confidence 偷接到新图。**
-
-### 3.2 提供真正 reference graph，再匹配计数
-
-创建本地 `private/reference_q4.jsonl`。每行结构：
-
-```json
-{"query_id":"Q61","reference_version":"作者确认的真实版本","scope":{"as_of":null,"market":null},"graph":{"nodes":[{"id":"g1","name":"真实参考实体","node_type":"product"}],"edges":[]}}
-```
-
-上面仅解释 schema，**不是 Q61 的真实 gold，不得复制这个示例去评分**。每条关系使用 `id/source_id/target_id/relation_type`；建议保留 `evidence_status` 和时间/地域元数据。禁止同一图中的重复 ID、重复三元组和悬空端点。人工标注应覆盖实体别名及引用来源，并保存仲裁前记录。
-
-```bash
+# dry-run：验证图输入并列任务，不调用模型。
 python -m "$V" --env-file "$ENVFILE" match \
-  --predictions "$P/extract_v2/results.jsonl" \
-  --reference "$P/reference_q4.jsonl" \
-  --out "$P/matching_v2" --max-calls 2 --execute
+  --predictions "$EXTRACTED" --reference "$REFERENCE" \
+  --out "$MATCH_OUT" --max-calls 2
+
+# 确认输入齐全，再小批执行。会使用配置的模型服务或CLI额度。
+python -m "$V" --env-file "$ENVFILE" match \
+  --predictions "$EXTRACTED" --reference "$REFERENCE" \
+  --out "$MATCH_OUT" --max-calls 2 --execute
+
+# 检查两份结果的匹配ID、方向与计数。只检查有效性，不按分数调提示词。
+# 配置不变时继续剩余项，已成功记录复用。
+python -m "$V" --env-file "$ENVFILE" match \
+  --predictions "$EXTRACTED" --reference "$REFERENCE" \
+  --out "$MATCH_OUT" --max-calls 140 --execute
 ```
 
-LLM 只给匹配对，Python 根据**一对一映射**、端点方向及真实分母计算 E-F1、R-F1、0.6 E-F1 + 0.4 R-F1。未知 ID、多对一和反向边映射直接报错。两个图在某类同时为空时该类指标未定义，不虚填完美分数。语义等价判断仍须抽样人工核查。
+`--max-calls` 是**本次命令的新调用上限**，不是并发数，也不是总任务数。失败文件不会自动重试；存在 `n_failed` 时不能宣布完成。中途停止后可继续尚未开始的任务，但不能自动忽略失败项。更换输入、模型或提示词必须另建版本。
 
-匹配得到的是 **closed-reference graph F1**。Unmatched 不等于世界中错误。不要将它直接作为开放世界 truth label。
-
-配对置信区间：
+全部有效匹配完成后才计算配对差值。方法名按实际结果中的 `method` 字段填写；以下以 Helicase/ReAct 为例：
 
 ```bash
-python -m "$V" paired --scores "$P/matching_v2/results.jsonl" \
-  --method-a Helicase --method-b ReAct --expected-queries "$P/reference_q4.jsonl" --out "$P/Helicase_vs_ReAct.json"
+python -m "$V" paired --scores "$MATCH_OUT/results.jsonl" \
+  --method-a Helicase --method-b ReAct \
+  --expected-queries "$REFERENCE" --out "$REMAIN/paired_Helicase_ReAct.json"
 ```
 
-函数先在 query 内平均重复运行，再 bootstrap query。缺失 query 会报错。运行数按 query 输出，避免把所有重复当成独立问题。此 CI 不能修复评分定义错误，也不解决跨方法预算混杂。
+对其他预先列出的比较方法同样运行；报告全部比较，不只选择显著者。多重比较的处理应写明。保存逐题分数、匹配对、版本和 reference hash。
 
-## 4. 原生边的事实级标签与校准
+**完成标准：**140 个预期 method/run/query 键均有有效结果，无遗漏、重复或未处理错误；20 个原 Q4 query 全覆盖；计数和已定义分数合法。空集合导致的未定义指标须说明。不得 clip 超过 1 的分数，不得删除低分题。query bootstrap 不替代 agent 独立重复，也不解决预算混杂。
 
-先读已经保存的 URL，不做新的 Serper 搜索：
+## 3. unresolved 离线诊断：零 API
+
+先输出：状态计数、无可用来源、展示片段截断、未展示引用数量、引文校验状态、原始 reason/scope_notes。**这些是处理记录，不是对 921 条事实重新判真伪。**
+
+下面示例只读现有 JSONL/JSON，写入新的私有文件；不会加载密钥或调用网络。要求标准 `items` 记录带 `fact_id` 和 `evidence_payload`。私有驱动格式不同则先保真转换，不伪造缺字段。
 
 ```bash
-python -m "$V" --env-file "$ENVFILE" pages \
-  --facts "$P/archive_v2/facts.jsonl" --methods Helicase --quadrants Q4 \
-  --out "$P/cited_pages" --max-pages 20 --execute
+python - <<'PY'
+import csv, json, os
+from collections import Counter
+from pathlib import Path
+
+def read_rows(path):
+    return [json.loads(line) for line in Path(path).read_text(encoding='utf8').splitlines() if line.strip()]
+
+def indexed(rows, name):
+    result = {}
+    for row in rows:
+        key = row['fact_id']
+        if key in result:
+            raise ValueError(f'Duplicate fact_id in {name}: {key}')
+        result[key] = row
+    return result
+
+facts = indexed([f for f in read_rows(os.environ['FACTS'])
+                 if f.get('method') == 'Helicase' and f.get('quadrant') == 'Q4'
+                 and f.get('fact_type') == 'edge'], 'facts')
+all_labels = indexed(read_rows(os.environ['PRIMARY_LABELS']), 'primary labels')
+missing = set(facts) - set(all_labels)
+if missing:
+    raise ValueError(f'{len(missing)} selected facts have no primary label')
+labels = {key: all_labels[key] for key in facts}
+item_rows = [json.loads(p.read_text(encoding='utf8'))
+             for p in sorted(Path(os.environ['PRIMARY_ITEMS']).glob('*.json'))]
+items = indexed([r for r in item_rows if r.get('fact_id') in facts], 'primary items')
+if set(items) != set(facts):
+    raise ValueError('Need the final item record for every selected fact; check repair ledger')
+allowed = {'supported', 'contradicted', 'unresolved'}
+if any(r.get('truth_status') not in allowed for r in labels.values()):
+    raise ValueError('Invalid primary truth_status')
+rows = []
+for key in sorted(facts):
+    label, item = labels[key], items[key]
+    if label['truth_status'] != item.get('truth_status'):
+        raise ValueError(f'Final labels/items disagree: {key}; reconcile versions, do not overwrite labels')
+    if 'evidence_payload' not in item or 'sources' not in item['evidence_payload']:
+        raise ValueError(f'Missing original evidence payload: {key}')
+    sources = item['evidence_payload']['sources']
+    row = {'fact_id': key, 'query_id': facts[key]['query_id'],
+           'truth_status': label['truth_status'],
+           'validation_status': label.get('validation_status', item.get('validation_status', 'not_recorded')),
+           'n_cited_urls': len(facts[key].get('citation_urls', [])),
+           'n_sources_shown': len(sources),
+           'no_usable_supplied_text': not any(s.get('text') for s in sources),
+           'any_shown_source_truncated': any(s.get('truncated') is True for s in sources),
+           'n_cited_urls_not_shown': max(0, len(set(facts[key].get('citation_urls', [])))
+                                         - len({s.get('url') for s in sources if s.get('url')})),
+           'reason': label.get('reason', item.get('reason', '')),
+           'scope_notes': label.get('scope_notes', item.get('scope_notes', ''))}
+    rows.append(row)
+if not rows:
+    raise ValueError('No selected facts')
+counts = Counter(row['truth_status'] for row in rows)
+binary = counts['supported'] + counts['contradicted']
+summary = {'n_selected': len(rows), 'status_counts': dict(counts),
+           'binary_assessed': binary, 'binary_coverage': binary / len(rows),
+           'unresolved_flags': {flag: sum(bool(r[flag]) for r in rows if r['truth_status']=='unresolved')
+                for flag in ('no_usable_supplied_text', 'any_shown_source_truncated')},
+           'note': 'Flags may overlap. Truncation is observed, not established as the cause of an unresolved label.'}
+out = Path(os.environ['REMAIN']) / 'unresolved_diagnostic_v1'
+out.mkdir(parents=True, exist_ok=False)
+with (out / 'facts.csv').open('w', newline='', encoding='utf8') as handle:
+    writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+    writer.writeheader(); writer.writerows(rows)
+(out / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n', encoding='utf8')
+print(json.dumps(summary, ensure_ascii=False, indent=2))
+PY
 ```
 
-原始页面、完整文本 hash、抓取时间和失败记录都缓存。再次执行可继续读取其余 URL；改变上限不会删除缓存。失败页面不自动重试。**当前重新读取不是原运行时的网页快照**；不要据此声称历史截止日前已经有这段内容。已有历史快照更好，按相同 `pages.jsonl` schema 输入即可。
+根据已报告结果应见 1,008 条边和 85/2/921。若不同，先核对版本，不强行把计数改成该值。`any_shown_source_truncated` 等标志可重叠，不能相加解释全部 unresolved。
+
+后续只在有具体理由时处理局部项目：已有快照中遗漏相关段落、读取失败或引用身份有误。任何新的证据截取策略必须对预先定义的受影响集合统一应用，保留旧标签并另建版本。不能只修不利结果直到变成 supported。材料仍不足时保留 unresolved。
+
+**完成标准：**每条边可追溯到实际呈现的证据和最终标签；能区分读取/呈现限制与“证据未充分支持”。语义原因（时间、地点、方向、能力与供货混用等）由人员按 reason/原文核对，不能从缺失字段自动推断。
+
+## 4. 第二 Judge：先冻结小样本和同一证据
+
+### 4.1 范围与抽样要求
+
+建议最多 **200 条边**：在当前计数下保留全部 85 supported、2 contradicted，再从 921 unresolved 中抽 113 条。此为**按主 Judge 标签富集的诊断样本**，不是新的 benchmark，也不是总体简单随机样本。
+
+本地执行者应先生成以下文件，再调用第二模型：
+
+- `secondary_sample/facts.jsonl`：原生事实子集，保留原 fact_id、引用顺序和 scope，不改事实。
+- `secondary_sample/primary_labels.jsonl`：同一批主 Judge 标签。
+- `secondary_sample/selection.json`：源文件 hash、抽样规则、固定抽样随机源、每层总体数/抽中数/包含概率、选中 IDs、主 Judge 配置及证据快照版本。
+
+没有现成的 `sample-secondary` CLI。本段是给本地执行者/编码 agent 的离线准备要求，**不要调用一个不存在的命令**。可用标准库固定随机抽样，先冻结清单，再运行第二模型。不允许看到第二模型标签后更换样本；计数与最新版本不一致时先重新核实设计。缺失主标签和 API 错误须单列，不作为 unresolved 填充。
+
+若需要总体支持率或一致率，必须考虑每层包含概率；否则只报告各层或样本内诊断。仅两个 contradicted 不能支撑稳定的负类性能结论。
+
+### 4.2 使用同一输入，只更换实际模型
+
+第二模型必须确实不同。换 key、assessor 名字，或者再次运行同一个模型，都不是替代 Judge。当前 `codex` 客户端固定主模型配置；不要凭换环境文件就声称它支持任意第二模型。可使用现有 `compatible` 后端和一个已验证可用的不同模型。客户端参数是否被该模型支持，先做小批接口检查；不在这里指定未经账户验证的模型 ID。
+
+保持相同系统提示词、证据页面文件、来源选择顺序、`max_sources`、`chars_per_source`、事实和 scope。若私有主批次的 payload 与公共 `judge` 重建的不一致，先冻结原 evidence_payload 并接入精确重放，不将其当成只改变 Judge 的比较。**quote repair 的处理政策也要一致且留痕。**
 
 ```bash
-python -m "$V" --env-file "$ENVFILE" judge \
-  --facts "$P/archive_v2/facts.jsonl" --methods Helicase --quadrants Q4 --fact-type edge \
-  --pages "$P/cited_pages/pages.jsonl" --assessor primary_judge \
-  --out "$P/fact_judge_primary" --max-calls 10 --execute
+# 这些值必须从 PRIMARY_MANIFEST/原记录填写，不直接假设为默认4/8000。
+export PRIMARY_MAX_SOURCES='填原来的数值'
+export PRIMARY_CHARS_PER_SOURCE='填原来的数值'
+SAMPLE="$REMAIN/secondary_sample"
+SECONDARY_OUT="$REMAIN/secondary_judge_v1"
 
-python -m "$V" analyse \
-  --facts "$P/archive_v2/facts.jsonl" --methods Helicase --quadrants Q4 --fact-type edge \
-  --labels "$P/fact_judge_primary/labels.jsonl" \
-  --out "$P/calibration_primary" --bootstrap 2000
+# 先列计划；未准备样本/证据时此步应停止，不自动扩大范围。
+python -m "$V" --env-file "$ALT_ENVFILE" judge \
+  --facts "$SAMPLE/facts.jsonl" --methods Helicase --quadrants Q4 --fact-type edge \
+  --pages "$PAGES" --assessor secondary_judge \
+  --max-sources "$PRIMARY_MAX_SOURCES" --chars-per-source "$PRIMARY_CHARS_PER_SOURCE" \
+  --out "$SECONDARY_OUT" --max-calls 2
+
+# 确认设置后运行2条。检查模型身份、完整输出以及与主Judge的input_sha256相同。
+python -m "$V" --env-file "$ALT_ENVFILE" judge \
+  --facts "$SAMPLE/facts.jsonl" --methods Helicase --quadrants Q4 --fact-type edge \
+  --pages "$PAGES" --assessor secondary_judge \
+  --max-sources "$PRIMARY_MAX_SOURCES" --chars-per-source "$PRIMARY_CHARS_PER_SOURCE" \
+  --out "$SECONDARY_OUT" --max-calls 2 --execute
+
+# 同配置继续，其余已完成项复用；最多200个有可用证据的样本调用。
+python -m "$V" --env-file "$ALT_ENVFILE" judge \
+  --facts "$SAMPLE/facts.jsonl" --methods Helicase --quadrants Q4 --fact-type edge \
+  --pages "$PAGES" --assessor secondary_judge \
+  --max-sources "$PRIMARY_MAX_SOURCES" --chars-per-source "$PRIMARY_CHARS_PER_SOURCE" \
+  --out "$SECONDARY_OUT" --max-calls 200 --execute
 ```
 
-`truth_status` 为 supported / contradicted / unresolved。前两种必须有输入页面中的逐字引文；校验引文存在不等于证明世界事实正确。judge 不见 method 和 confidence。默认最多展示 4 个可用来源、每个 8,000 字符，截断和未展示来源数量有记录。**抽取不充分的 unsupported 不是 contradicted；缺页面不会被判 false。**
+无可用页面时，当前程序可不调用模型而产生 unresolved。比较中须单列“两边均因无证据而未调用模型”的条目；不能将这类机械一致当作两模型判断高度一致的证据。不能把 `--max-calls 200` 的结束当作样本一定已全部有效完成。
 
-精确配对后的 ECE、自适应 ECE（不拆相同 confidence）、Brier、可靠性 SVG/PNG、query-cluster bootstrap CI、LaTeX 表和 CSV 会输出。同时报告 unresolved、missing labels、无 confidence 的数量和覆盖率。另提供缺失标签情况下 Brier 的代数上下界，以及固定 0.5 / domain-count 简单分数基线。来源域不同不等于独立。
-
-**这首先是相对于 LLM 证据判定的诊断，不等于独立人类事实校准。** 校准主要分析原生边。node 模式只评价身份/类型，不保证验证该节点所有属性；它是单列的 score-scope 诊断，不能与 edge 混称同一事实级实验。
-
-新增页面后不要覆盖已有 judge 目录。新页面文件 hash 会改变；使用例如 `fact_judge_primary_v2` 保存一个新的评估版本。替代 judge 使用同一批快照和事实、不同的实际模型（最好不同家族），并使用新的 assessor 名称和输出目录；仅换 key 不构成替代 judge。
-
-## 5. 人工审核：必须是真实独立标注
+### 4.3 比较与停止标准
 
 ```bash
-python -m "$V" human-forms --facts "$P/archive_v2/facts.jsonl" \
-  --out "$P/human_audit" --sample 400
+# 仅重新统计这一个冻结样本；不覆盖原全量主Judge calibration目录。
+python -m "$V" analyse --facts "$SAMPLE/facts.jsonl" \
+  --methods Helicase --quadrants Q4 --fact-type edge \
+  --labels "$SAMPLE/primary_labels.jsonl" "$SECONDARY_OUT/labels.jsonl" \
+  --out "$REMAIN/secondary_sample_calibration_v1" --bootstrap 2000
 ```
 
-默认包括 Q61/Q64 的全部原生边，再对其余方法/置信度分层抽样。提供两张**空白、看不到 method/confidence 的** CSV。两名专家分别填写，不提前互看。`PRIVATE_mapping.jsonl` 只给组织审核的人，不给盲审者。
+`analyse` 产生每个 assessor 的条件校准和覆盖率，**不自动产生跨模型一致性表**。本地离线比较还须输出：按 fact_id 对齐的三分类混淆矩阵、各主标签层的一致率、实际调用覆盖率、分歧清单。校准数值之差优先在两模型均可二元判定的**共同事实集合**上另行报告；不能拿不同的已判定子集均值直接归因于模型差异。人工 `agreement` 命令读的是评分 CSV，不接收这些 LLM JSONL。
 
-该归档中 baseline 原生 KG 为空，所以这份原生图审核主要覆盖 Helicase；不能宣称已经审核了所有 baseline。后续应对统一抽取的 baseline claims 配对具体引用再做人审。
+**完成标准：**模型配置和提示词可追溯；共同事实的 input_sha256 一致；选中ID覆盖完整且错误单列；样本、来源选择和任何修复政策未因结果而改变；报告分歧而非只保留一致部分。不重新搜索，不重新运行 Helicase。模型辅助检查不替代多人专家核验。
 
-样本含案例全量与分层富集，并非简单随机抽样。IAA 可直接报告；事实支持率和校准只能按其抽样设计解释，不把未加权的富集样本当全体事实总体。
+## 5. 仍需人类/作者记录，不列入本轮自动API任务
 
-```bash
-python -m "$V" agreement --rater-a "$P/human_audit/rater_a.csv" \
-  --rater-b "$P/human_audit/rater_b.csv" --out "$P/human_audit/iaa.json"
-python -m "$V" human-labels --ratings "$P/human_audit/rater_a.csv" \
-  --mapping "$P/human_audit/PRIVATE_mapping.jsonl" --assessor expert_a \
-  --out "$P/human_audit/expert_a_labels.jsonl"
-```
+- **人工审核：**复用已生成的400条盲审材料，两人独立填写，先算仲裁前一致性，再保存仲裁版本。空表生成不算完成；案例边的合同/物理流/候选/能力区别与日期范围一起核验。
+- **原SCQA说明：**提供原标注人数、资质、日期、参考来源、仲裁、时间/地域范围和测试集使用历史。保留原数据集；不从已看过的问题随机划分出一个“新held-out”。
+- **已有消融：**优先找回原 no-UQ/单agent等逐题输出、模型、prompt、停止和预算记录。已有且符合要求的证据直接复用。
+- **重复与预算匹配：**Reviewer 1明确提出，仍是未关闭事项。但本页不默认启动80×3或四系统全量任务。只有原记录不足且实验范围确认后，另行执行。当前原生入口只有Full/search_n1；严格四系统后端预算拦截未接通。不要创建同名空开关冒充实验。
 
-IAA 在仲裁前计算。保存所有分歧，第三人仲裁另建文件；不覆盖最初两份评分。空白意味着未标，不自动算 unresolved，更不能填成 0。标注者人数、资质、日期、scope 和仲裁说明仍由作者提供。
+这些事项不会因为前三项机器任务结束而自动变成已完成。取舍需在最终response里如实说明，不把有局限的结果写成方法或整个数据集无效。
 
-## 6. 重复运行原系统：完整本地运行环境上操作
+## 6. 给本地执行者的固定要求与交付物
 
-`/你的完整运行工程` 必须可导入 `helicase`。`--backend-root` 指包含 `helix_core` 的父目录；两者同根时省略。公共论文仓库或那份符号链接式 `helix_core.zip` 不能替代源码。
+1. 先盘点已完成结果和版本，禁止全量重复 `extract/pages/primary judge/repeat`。禁止修改核心算法、原 SCQA、gold、主标签和旧统计。
+2. 仅在完整原 reference 可用时跑 `match`。无 reference 时输出明确 blocker，继续零API诊断；不得让模型替作者生成 gold。
+3. 离线诊断使用最终已验收 items/labels；旧失效项、修复与合并记录继续保留。
+4. 第二Judge最多200条作为本次建议预算；先冻结样本及原证据，核对相同输入，再付费。先2条检查，不自动换模型/提示词、不无限重试。
+5. 输出到新的 `private/remaining_v1/`，已有目录时检查版本，不能删掉重来。源数据、页面原文、密钥和登录记录不提交GitHub。
+6. 生成 `REMAINING_STATUS.md`：逐项 done/blocked/not_started，输入hash，模型与后端，真实处理数/失败数、结果路径、尚待作者确认的事项。报告实际耗时，不承诺未经测量的两天或五天。
+7. 最后把结果映射回R1.2（图评分）、R1.3/R2.38（条件校准与覆盖率）、R1.5（替代judge及人工/重复的区别）。旧response中“标签尚不存在”等句子要按新证据更新，但未做的人审、重复和预算匹配不改成完成式。
 
-```bash
-python -m "$V" --env-file "$ENVFILE" doctor --purpose agent \
-  --runtime-root /你的完整运行工程 --backend-root /包含helix_core的父目录
-
-# 先运行两个环境 smoke queries，不计为独立最终测试集。
-python -m "$V" --env-file "$ENVFILE" repeat \
-  --questions "$P/archive_v2/questions.jsonl" \
-  --runtime-root /你的完整运行工程 --backend-root /包含helix_core的父目录 \
-  --ids 1,21 --runs 1 --variants full --dataset-role pilot \
-  --out "$P/pilot_native" --max-jobs 2 --wall-seconds 3600 --execute
-```
-
-然后检查每个 query 的 `worker.log`、`native_output.json`、`resolved_config.json` 和 `status.json`。原 backend 有时在内部失败后仍返回部分图；`native_returned` 只表示返回了数据，不表示搜索完整或答案正确。不能把失败静默剔除。
-
-以下是选择全量重复时的命令，不是默认启动任务。当前 runner **逐题串行**：`--max-jobs` 是本次最多启动次数，不是并发数；`--wall-seconds` 是每次执行的超时上限。
-
-全量重复（80 × 3 = 240 次原系统执行）：
-
-```bash
-python -m "$V" --env-file "$ENVFILE" repeat \
-  --questions "$P/archive_v2/questions.jsonl" \
-  --runtime-root /你的完整运行工程 --backend-root /包含helix_core的父目录 \
-  --runs 3 --variants full --out "$P/repeats_native" \
-  --max-jobs 240 --wall-seconds 7200 --execute
-```
-
-每次运行是新进程、新图、新随机种子与独立输出。存 `freeze.json`、源码 hash、模型与配置和顺序；更改配置后不能覆盖继续。provider 未保证 seed 控制，seed 不意味着 API 确定性。按原代码保留自然停止，Q1–Q3 最多10轮、Q4最多20轮。Neo4j 明确禁用，避免额外写入外部数据库。
-
-恢复是继续**尚未开始的 query/run**，不是把上个 run 的 checkpoint 搬到下一次。失败任务不会自动重试；保留并诊断，然后另开版本或明确记录替代执行。终止进程/配额耗尽也必须纳入 failure accounting。
-
-Q4 的 n=1 功能控制可用单独输出目录。若同一配置的 Full 已运行，复用其结果，只运行 `--variants search_n1 --max-jobs 60`，不要重复付费运行 Full：
-
-```bash
-python -m "$V" --env-file "$ENVFILE" repeat \
-  --questions "$P/archive_v2/questions.jsonl" \
-  --runtime-root /你的完整运行工程 --backend-root /包含helix_core的父目录 \
-  --ids 61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80 \
-  --runs 3 --variants full,search_n1 --out "$P/q4_n1_control" --max-jobs 120 --execute
-```
-
-`search_n1` 只将原配置 `n_min=n_max=1`。它不是“移除 search agent”，不是“关闭 UQ”，也不是预算匹配。`--single-model` 可将所有已暴露角色设成 `SILICON_MODEL`，但完整 backend 的潜在额外调用仍需审计。
-
-**这版 repeat 没有伪称能严格计量/拦截隐藏 backend 内全部 token 或 Serper 调用。** 它只给 iteration 和 wall-clock 限制。因此不能把这些运行写成 reviewer 要求的 matched-token/tool comparison。原来的 ReAct/ToT/no-UQ 运行脚本不在提供的源码中；本包拒绝杜撰这三个方法或用一个同名 flag 假装实现。
-
-新结果可重新生成原生 fact 表：
-
-```bash
-python -m "$V" facts --records "$P/repeats_native/records.jsonl" --out "$P/repeats_native/facts.jsonl"
-```
-
-## 7. 真 held-out 的边界
-
-先冻结代码、prompts、模型、预算与评估协议，再构建作者之前没用于开发的新 query/reference 文件。建议另做20题、每象限5题；这个数量是补实验建议，不是已经有这样的数据。记录日期、标注过程和去重检查。
-
-`repeat --questions 真实新文件 --dataset-role new_holdout` 支持新 query IDs，但 flag **不能证明**真的 held out。若已有真正未用过的测试集，先提供开发历史，而不必无理由浪费已有数据。
-
-## 8. GitHub 提交与验证
-
-本目录是独立补评估工具，不包含未公开的核心 runtime、原始数据或密钥。更新后先检查软件测试和命令入口：
-
-```bash
-python -m pytest -q
-python -m reviewer_analysis.revision_v2 --help
-```
-
-不要提交 `private/.env`、原始结果、网页全文或未授权公开的 runtime。GitHub 提交成功与新实验运行成功是两个不同状态。
-
-若需完整工程复现，按你已可工作的环境安装原工程依赖；本包 requirements 只安装新增分析工具，不伪造或替换缺失的 `helix_core`。本地单元/模拟测试通过不等于真实API、真实运行时间、预算公平或新实验结果已验证。
-
-Ctrl-C 会终止当前付费子进程并记录 interrupted。出现已知的配额/规划失败日志时标记 needs_review 并停止批次；这只是保守的异常检查，不保证识别后端所有部分失败。
-
-本地运行器还会检查已导出行动和运行时保留的行动结果：`failed`、未完成行动、
-`success=False`、内部搜索返回的错误项均会触发 `needs_review`。部分结果保留在
-`records.jsonl`，不得当作正常成功样本或静默剔除。超时会终止子进程并保存脱敏后的
-`worker.log`。这些检查不修改原 agent 的决策或错误处理，也不保证发现所有隐性失败。
-
-`search_n1` 限制的是每个外层搜索行动生成的查询变体数量；单个 Searcher 内部仍可
-多轮搜索和读取页面。它不等于“一次实际搜索 API 调用”，也不构成 token/tool 预算匹配。
-
-## 9. 通过已登录 Codex 使用 GPT-5.5
-
-评估命令支持 `REVIEW_JUDGE_BACKEND=codex`，无需另配 OpenAI API key，但必须已在
-本机 Codex 登录并可使用 `gpt-5.5`。它使用该账户的 Codex/ChatGPT 额度。配置示例：
-
-```dotenv
-REVIEW_JUDGE_BACKEND=codex
-REVIEW_JUDGE_MODEL=gpt-5.5
-REVIEW_CODEX_TIMEOUT=600
-```
-
-将配置放在本地 `private/gpt55.env`，然后沿用 `extract`、`judge`、`match` 命令，
-把 `--env-file private/.env` 替换成该文件路径。模型固定为 GPT-5.5、medium reasoning；
-不会自动改用 Qwen 或其他模型。引用网页读取仍是独立步骤。
-
-每次调用在输出目录的 `calls/` 下保存提示词、最终回答、原始事件和退出记录；调用目录
-权限为 0700。原始事件与回答可能包含完整研究文本，不应公开提交。模型工具、联网搜索、
-插件和项目指令已关闭；异常工具事件、缺少用量或不完整调用会拒收。
-报告引文和事实引文继续由本地代码检查；不合格输出也保留，不能作为有效图或人工标签。
-
-这个通道的 `api_calls` 字段计数的是 CLI 调用，不是可独立核对的 HTTP 请求数。
-CLI 返回 token 用量，但不返回可核实的底层模型快照，也没有此实现可强制的 provider
-输出 token 上限。因此它可用于模型辅助补评估，不能据此宣称四系统严格 token 预算匹配。
-
-已生成的清单锁定输入、提示词和客户端配置。更换后端或提示词时使用新的输出目录，
-不要把早期试跑与后续版本混为同一个预先冻结的实验。
+**这次推送只更新执行说明，没有新增付费运行，也没有把上述离线准备要求冒充已经实现的新CLI。**
