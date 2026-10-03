@@ -1,32 +1,31 @@
-# Helicase revision tools v2 — continue from the completed evaluation
+# Helicase revision: retained composite proxy + complementary evidence evaluation
 
-**Metric clarification (2026-10-03):** [Historical Q4 formula and source snapshot](OLD_Q4_METRIC_ZH.md). Historical Q4 scores combine concise-answer semantic matching with a native-graph-density relation proxy. The newer full-report graph-matching scores measure a different object and are not directly comparable. Provisional matching is complete; pause new model calls and full agent reruns while auditing alignment offline.
+Protocol `complementary-evaluation-v1` (2026-10-03), grounded in repository revision `ccad149`.
 
-**Start here: [只做剩余任务 / Remaining tasks](README_ZH.md).**
+**Keep the original SCQA questions, prose references, reports, native graphs and historical scores. Retain the legacy composite proxy with its actual definition. Add claim-level evidence evaluation; do not require an exhaustive gold graph to evaluate the original question-answering task.** This does not validate the proxy as relation accuracy or waive known counting errors.
 
-[Full command reference, preserved](README_FULL_ZH.md) · [Recorded validation](VALIDATION.md) · [Evaluation protocol](EXPERIMENT_PROTOCOL.md)
+Start with the [Chinese remaining-work guide](README_ZH.md).
 
-Reuse the original SCQA dataset, original reference graphs and saved outputs. Do not restart completed extraction, page collection or primary-judge assessment.
+| Document | Purpose |
+|---|---|
+| [Legacy runbook](LEGACY_EVAL_RUNBOOK_ZH.md) | Exact formula, offline decomposition, bounded answer reassessment, validity tests and call accounting |
+| [Claim/evidence protocol](CLAIM_EVIDENCE_PROTOCOL_ZH.md) | Comparable answer claims, source support, coverage, conditional calibration and human checks |
+| [Rebuttal text](REBUTTAL_EVALUATION_TEXT.md) | Author-facing wording, reviewer mapping and manuscript changes; planned work stays in future tense |
+| [Experiment protocol](EXPERIMENT_PROTOCOL.md) | Frozen inputs, fair scoring, budget and repeat-run boundaries |
+| [Status template](REMAINING_STATUS_TEMPLATE.md) | Separate completed/reused results from planned, blocked and unrun work |
+| [Historical metric explanation](OLD_Q4_METRIC_ZH.md) | Preserved source audit; not a new validation of old rankings |
+| [Validation record](VALIDATION.md) | Previously reported executions, not tests rerun by this documentation change |
 
-The validation record at commit `83d7f07` reports 140 completed common-report extractions, 484 retained page outcomes, and 1,008 native-edge labels. Only 87 edges have binary assessments, so the reported ECE/Brier describe that conditional subset, not the full graph. Detailed outputs remain local/private; the record is not a fresh inspection of those outputs.
+Completed common-graph extraction, provisional matching, source retrieval and native-edge multi-judge diagnostics are not restarted. The provisional graph result and its limitations remain available; they are not erased because of the ranking. Native-edge labels do not automatically validate a new answer-level evaluator or a cross-method claim sample.
 
-## Remaining work, in order
-
-| Task | Inputs | New model work |
-|---|---|---|
-| Offline alignment audit | Original prose, converted reference, extracted reports and actual match pairs | None; provisional matching is already complete (140/140) |
-| Scope and representation review | The same 20 queries and seven methods | None; resolve time/market, background facts, granularity and assertion status first |
-| Unresolved diagnostics / alternative judges | Completed diagnostics and frozen-sample three-model results | Already completed; do not repeat unchanged inputs |
-| Human audit / reference documentation | Existing blank forms and author records | Not replaceable by API calls |
-| Agent repeats / matched-budget controls | Existing configurations and raw records first | Still unresolved; paused, not automatically launched |
-
-The Chinese guide gives commands for existing `match`, `paired`, `judge` and `analyse` entry points, completion criteria, and explicit local preparation requirements. The command examples are historical instructions, not authorization to rerun completed tasks. Secondary sampling and cross-model agreement preparation are **not new CLI subcommands**. Do not treat `analyse` as an automatic inter-judge agreement calculation.
+Current sequence: inspect archived inputs and invalid rows; expose answer and structural components separately; reassess answer units only where reliable matches cannot be recovered; reuse evidence diagnostics; add only missing comparable claim checks and real human ratings. Original-agent repeats and strict matched-budget comparisons remain separate requirements, not an automatic 240-job launch.
 
 ```bash
+git status --short
 git pull --ff-only origin main
 python -m reviewer_analysis.revision_v2 --help
 ```
 
-For first-time setup only, use the preserved full reference. Do not repeat `prepare` merely because the README changed.
+This update changes documentation only. No algorithm, evaluator, dataset, score, model output, manuscript or credential is changed. No new answer-unit/legacy CLI is implemented here. The existing `extract`/`match` commands evaluate full-report graphs, not the proposed answer-unit view. Implement and test that adapter locally before any bounded model pilot. Existing `judge`, `analyse`, `paired --metric` and `agreement` are reusable subject to their schemas.
 
-No core algorithm, dataset, original result, primary label, prompt or runtime code is changed by this documentation update. Network-backed commands still require `--execute`. The native runner is serial: `--max-jobs` limits launches, not concurrency. Keep credentials, raw research records, page text and login traces in ignored private directories.
+[The historical full command guide](README_FULL_ZH.md) is retained for reference, not an instruction to restart completed jobs. Paid operations require `--execute`. The native runner remains serial; `--max-jobs` is a launch limit, not concurrency. Keep raw records and credentials private. Hypothetical personal-draft tables are not empirical runs.
