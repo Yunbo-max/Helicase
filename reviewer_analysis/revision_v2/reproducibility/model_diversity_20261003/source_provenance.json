@@ -1,0 +1,21 @@
+{
+  "source_layout": "reviewer_analysis/revision_v2/private/remaining_v1",
+  "copy_policy": "Byte-identical execution scripts; local inputs and account traces intentionally excluded. These are execution snapshots, not a turnkey dataset release.",
+  "source_sha256": {
+    "analyse_secondary.py": "ad9b0d63cc9598ae54823431f60a42cc58f6e1f05ef539cdfa02a569423e61c6",
+    "audit_tertiary.py": "62968536b4eb0447be2483322ff82dea4e52b00107234062ae96d75bd83f064c",
+    "analyse_diversity.py": "8e9ead21e83710addb610254195185353906c3ce3bec5a449ac459da75f4fe8c",
+    "test_secondary_runtime_gpt56.py": "c227bd044441dd3f7c61969a48db0626684c240392bcbe0f009f0bfd64a44d3e",
+    "test_secondary_analysis.py": "6630a7581d976ca69bd9bd6f2aa8213577b89aeebcc6dfd5da8fdb7d5ad883dc",
+    "test_tertiary_runtime.py": "9b99c1bf02cef84c229655e9233a07749c97967394cecc075e47a0ae2b81c907",
+    "test_diversity_analysis.py": "a6835b07ecc30d798693c12ee80ab9bdb53bb51d63211d09fea864622c71be95",
+    "secondary_runtime_gpt56/codex_client_gpt56.py": "d765325014fdb1bc58cfb1850b987b16d3659331e618562c2f9c9dc9b02132f9",
+    "secondary_runtime_gpt56/run_secondary.py": "e9daa924c34a64a19f252a986c0a8de0fa4e7336892725889c6c926811e75215",
+    "tertiary_runtime_terra/codex_client_terra.py": "2f38536cbac5a90abeebbcd8ffcf2ef328485c2de6fe04904486a04d2be24578",
+    "tertiary_runtime_terra/run_tertiary.py": "8ef8a1a7bae130c3bb8e435ea44e8a721623fa4b980d2c8c186f17d23effdedb",
+    "diversity_comparison_v1/comparison.json": "5bb25bd7839d45baf630ef4855d18e772173af34d57a5dc8df645634889a4a4b",
+    "diversity_comparison_v1/audit.json": "6afdba9d2379754bdc2893c7136aea35ba440084928c401b0ec1504d1a1508af",
+    "diversity_software_verification.json": "21cdb1d23598056e588668dd35c19d2e0220b5c5d4a7761e76b0c333c8625586",
+    "secondary_sample/selection.json": "31e6bcc8c7dbe5d8320e82dc177952f1ddffb19b6371c6bbd175b3e7478cb60f"
+  }
+}

@@ -1,0 +1,1933 @@
+{
+  "at": "2026-10-02T23:15:29.619070+00:00",
+  "models": [
+    "gpt-5.5",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra"
+  ],
+  "n_facts": 200,
+  "all_three_called": {
+    "n": 189,
+    "model_order": [
+      "gpt-5.5",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra"
+    ],
+    "unanimous": 150,
+    "two_agree": 38,
+    "all_different": 1,
+    "any_disagreement": 39,
+    "unanimous_fraction": 0.7936507936507936,
+    "patterns": [
+      {
+        "labels": {
+          "gpt-5.5": "contradicted",
+          "gpt-5.6-sol": "contradicted",
+          "gpt-5.6-terra": "contradicted"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "contradicted",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 54
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 14
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 6
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 11
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "contradicted",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "contradicted"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 4
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 95
+      }
+    ]
+  },
+  "all200": {
+    "n": 200,
+    "model_order": [
+      "gpt-5.5",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra"
+    ],
+    "unanimous": 161,
+    "two_agree": 38,
+    "all_different": 1,
+    "any_disagreement": 39,
+    "unanimous_fraction": 0.805,
+    "patterns": [
+      {
+        "labels": {
+          "gpt-5.5": "contradicted",
+          "gpt-5.6-sol": "contradicted",
+          "gpt-5.6-terra": "contradicted"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "contradicted",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 54
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 14
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 6
+      },
+      {
+        "labels": {
+          "gpt-5.5": "supported",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 11
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "contradicted",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "supported",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "contradicted"
+        },
+        "n": 1
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "supported"
+        },
+        "n": 4
+      },
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 106
+      }
+    ]
+  },
+  "mechanical_no_evidence": {
+    "n": 11,
+    "model_order": [
+      "gpt-5.5",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra"
+    ],
+    "unanimous": 11,
+    "two_agree": 0,
+    "all_different": 0,
+    "any_disagreement": 0,
+    "unanimous_fraction": 1.0,
+    "patterns": [
+      {
+        "labels": {
+          "gpt-5.5": "unresolved",
+          "gpt-5.6-sol": "unresolved",
+          "gpt-5.6-terra": "unresolved"
+        },
+        "n": 11
+      }
+    ]
+  },
+  "by_original_primary_stratum": {
+    "supported": {
+      "n": 85,
+      "model_order": [
+        "gpt-5.5",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra"
+      ],
+      "unanimous": 54,
+      "two_agree": 31,
+      "all_different": 0,
+      "any_disagreement": 31,
+      "unanimous_fraction": 0.6352941176470588,
+      "patterns": [
+        {
+          "labels": {
+            "gpt-5.5": "supported",
+            "gpt-5.6-sol": "supported",
+            "gpt-5.6-terra": "supported"
+          },
+          "n": 54
+        },
+        {
+          "labels": {
+            "gpt-5.5": "supported",
+            "gpt-5.6-sol": "supported",
+            "gpt-5.6-terra": "unresolved"
+          },
+          "n": 14
+        },
+        {
+          "labels": {
+            "gpt-5.5": "supported",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "supported"
+          },
+          "n": 6
+        },
+        {
+          "labels": {
+            "gpt-5.5": "supported",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "unresolved"
+          },
+          "n": 11
+        }
+      ]
+    },
+    "contradicted": {
+      "n": 2,
+      "model_order": [
+        "gpt-5.5",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra"
+      ],
+      "unanimous": 1,
+      "two_agree": 1,
+      "all_different": 0,
+      "any_disagreement": 1,
+      "unanimous_fraction": 0.5,
+      "patterns": [
+        {
+          "labels": {
+            "gpt-5.5": "contradicted",
+            "gpt-5.6-sol": "contradicted",
+            "gpt-5.6-terra": "contradicted"
+          },
+          "n": 1
+        },
+        {
+          "labels": {
+            "gpt-5.5": "contradicted",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "unresolved"
+          },
+          "n": 1
+        }
+      ]
+    },
+    "unresolved": {
+      "n": 102,
+      "model_order": [
+        "gpt-5.5",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra"
+      ],
+      "unanimous": 95,
+      "two_agree": 6,
+      "all_different": 1,
+      "any_disagreement": 7,
+      "unanimous_fraction": 0.9313725490196079,
+      "patterns": [
+        {
+          "labels": {
+            "gpt-5.5": "unresolved",
+            "gpt-5.6-sol": "contradicted",
+            "gpt-5.6-terra": "supported"
+          },
+          "n": 1
+        },
+        {
+          "labels": {
+            "gpt-5.5": "unresolved",
+            "gpt-5.6-sol": "supported",
+            "gpt-5.6-terra": "unresolved"
+          },
+          "n": 1
+        },
+        {
+          "labels": {
+            "gpt-5.5": "unresolved",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "contradicted"
+          },
+          "n": 1
+        },
+        {
+          "labels": {
+            "gpt-5.5": "unresolved",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "supported"
+          },
+          "n": 4
+        },
+        {
+          "labels": {
+            "gpt-5.5": "unresolved",
+            "gpt-5.6-sol": "unresolved",
+            "gpt-5.6-terra": "unresolved"
+          },
+          "n": 95
+        }
+      ]
+    }
+  },
+  "pairwise": [
+    {
+      "model_a": "gpt-5.5",
+      "model_b": "gpt-5.6-sol",
+      "all200": {
+        "n": 200,
+        "agree": 180,
+        "disagree": 20,
+        "agreement": 0.9,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 68,
+            "contradicted": 0,
+            "unresolved": 17
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 1
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 1,
+            "unresolved": 111
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 85,
+            "agree": 68,
+            "agreement": 0.8,
+            "secondary_counts": {
+              "supported": 68,
+              "contradicted": 0,
+              "unresolved": 17
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            }
+          },
+          "unresolved": {
+            "n": 113,
+            "agree": 111,
+            "agreement": 0.9823008849557522,
+            "secondary_counts": {
+              "supported": 1,
+              "contradicted": 1,
+              "unresolved": 111
+            }
+          }
+        }
+      },
+      "both_called": {
+        "n": 189,
+        "agree": 169,
+        "disagree": 20,
+        "agreement": 0.8941798941798942,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 68,
+            "contradicted": 0,
+            "unresolved": 17
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 1
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 1,
+            "unresolved": 100
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 85,
+            "agree": 68,
+            "agreement": 0.8,
+            "secondary_counts": {
+              "supported": 68,
+              "contradicted": 0,
+              "unresolved": 17
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            }
+          },
+          "unresolved": {
+            "n": 102,
+            "agree": 100,
+            "agreement": 0.9803921568627451,
+            "secondary_counts": {
+              "supported": 1,
+              "contradicted": 1,
+              "unresolved": 100
+            }
+          }
+        }
+      },
+      "by_original_primary_stratum": {
+        "supported": {
+          "n": 85,
+          "agree": 68,
+          "disagree": 17,
+          "agreement": 0.8,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 68,
+              "contradicted": 0,
+              "unresolved": 17
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 85,
+              "agree": 68,
+              "agreement": 0.8,
+              "secondary_counts": {
+                "supported": 68,
+                "contradicted": 0,
+                "unresolved": 17
+              }
+            },
+            "contradicted": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            }
+          }
+        },
+        "contradicted": {
+          "n": 2,
+          "agree": 1,
+          "disagree": 1,
+          "agreement": 0.5,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            },
+            "unresolved": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "contradicted": {
+              "n": 2,
+              "agree": 1,
+              "agreement": 0.5,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 1,
+                "unresolved": 1
+              }
+            },
+            "unresolved": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            }
+          }
+        },
+        "unresolved": {
+          "n": 102,
+          "agree": 100,
+          "disagree": 2,
+          "agreement": 0.9803921568627451,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 1,
+              "contradicted": 1,
+              "unresolved": 100
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "contradicted": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 102,
+              "agree": 100,
+              "agreement": 0.9803921568627451,
+              "secondary_counts": {
+                "supported": 1,
+                "contradicted": 1,
+                "unresolved": 100
+              }
+            }
+          }
+        }
+      },
+      "common_binary_calibration": {
+        "n": 69,
+        "n_queries": 15,
+        "primary": {
+          "n": 69,
+          "brier": 0.045760869565217396,
+          "ece": 0.16449275362318835,
+          "adaptive_ece": 0.16449275362318838,
+          "mean_gap": 0.1644927536231885,
+          "mean_confidence": 0.8210144927536231,
+          "accuracy": 0.9855072463768116,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 6,
+              "confidence": 0.7000000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 8,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 54,
+              "confidence": 0.8500000000000001,
+              "accuracy": 0.9814814814814815
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.74,
+              "n": 7,
+              "confidence": 0.6785714285714286,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 62,
+              "confidence": 0.8370967741935484,
+              "accuracy": 0.9838709677419355
+            }
+          ]
+        },
+        "secondary": {
+          "n": 69,
+          "brier": 0.045760869565217396,
+          "ece": 0.16449275362318835,
+          "adaptive_ece": 0.16449275362318838,
+          "mean_gap": 0.1644927536231885,
+          "mean_confidence": 0.8210144927536231,
+          "accuracy": 0.9855072463768116,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 6,
+              "confidence": 0.7000000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 8,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 54,
+              "confidence": 0.8500000000000001,
+              "accuracy": 0.9814814814814815
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.74,
+              "n": 7,
+              "confidence": 0.6785714285714286,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 62,
+              "confidence": 0.8370967741935484,
+              "accuracy": 0.9838709677419355
+            }
+          ]
+        },
+        "secondary_minus_primary": {
+          "brier": 0.0,
+          "ece": 0.0,
+          "adaptive_ece": 0.0
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            0.0,
+            0.0
+          ],
+          "ece": [
+            0.0,
+            0.0
+          ],
+          "adaptive_ece": [
+            0.0,
+            0.0
+          ]
+        },
+        "n_boot": 2000,
+        "seed": 20261002,
+        "interpretation": "Same stored confidence on exactly the common binary-assessed facts. Difference reflects judge labels, not a newly trained calibration model. Enriched diagnostic sample; no population or causal claim."
+      }
+    },
+    {
+      "model_a": "gpt-5.5",
+      "model_b": "gpt-5.6-terra",
+      "all200": {
+        "n": 200,
+        "agree": 168,
+        "disagree": 32,
+        "agreement": 0.84,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 60,
+            "contradicted": 0,
+            "unresolved": 25
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 1
+          },
+          "unresolved": {
+            "supported": 5,
+            "contradicted": 1,
+            "unresolved": 107
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 85,
+            "agree": 60,
+            "agreement": 0.7058823529411765,
+            "secondary_counts": {
+              "supported": 60,
+              "contradicted": 0,
+              "unresolved": 25
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            }
+          },
+          "unresolved": {
+            "n": 113,
+            "agree": 107,
+            "agreement": 0.9469026548672567,
+            "secondary_counts": {
+              "supported": 5,
+              "contradicted": 1,
+              "unresolved": 107
+            }
+          }
+        }
+      },
+      "both_called": {
+        "n": 189,
+        "agree": 157,
+        "disagree": 32,
+        "agreement": 0.8306878306878307,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 60,
+            "contradicted": 0,
+            "unresolved": 25
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 1
+          },
+          "unresolved": {
+            "supported": 5,
+            "contradicted": 1,
+            "unresolved": 96
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 85,
+            "agree": 60,
+            "agreement": 0.7058823529411765,
+            "secondary_counts": {
+              "supported": 60,
+              "contradicted": 0,
+              "unresolved": 25
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            }
+          },
+          "unresolved": {
+            "n": 102,
+            "agree": 96,
+            "agreement": 0.9411764705882353,
+            "secondary_counts": {
+              "supported": 5,
+              "contradicted": 1,
+              "unresolved": 96
+            }
+          }
+        }
+      },
+      "by_original_primary_stratum": {
+        "supported": {
+          "n": 85,
+          "agree": 60,
+          "disagree": 25,
+          "agreement": 0.7058823529411765,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 60,
+              "contradicted": 0,
+              "unresolved": 25
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 85,
+              "agree": 60,
+              "agreement": 0.7058823529411765,
+              "secondary_counts": {
+                "supported": 60,
+                "contradicted": 0,
+                "unresolved": 25
+              }
+            },
+            "contradicted": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            }
+          }
+        },
+        "contradicted": {
+          "n": 2,
+          "agree": 1,
+          "disagree": 1,
+          "agreement": 0.5,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 1
+            },
+            "unresolved": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "contradicted": {
+              "n": 2,
+              "agree": 1,
+              "agreement": 0.5,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 1,
+                "unresolved": 1
+              }
+            },
+            "unresolved": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            }
+          }
+        },
+        "unresolved": {
+          "n": 102,
+          "agree": 96,
+          "disagree": 6,
+          "agreement": 0.9411764705882353,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 5,
+              "contradicted": 1,
+              "unresolved": 96
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "contradicted": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 102,
+              "agree": 96,
+              "agreement": 0.9411764705882353,
+              "secondary_counts": {
+                "supported": 5,
+                "contradicted": 1,
+                "unresolved": 96
+              }
+            }
+          }
+        }
+      },
+      "common_binary_calibration": {
+        "n": 61,
+        "n_queries": 15,
+        "primary": {
+          "n": 61,
+          "brier": 0.04463114754098361,
+          "ece": 0.15655737704918032,
+          "adaptive_ece": 0.1565573770491804,
+          "mean_gap": 0.15655737704918027,
+          "mean_confidence": 0.8270491803278689,
+          "accuracy": 0.9836065573770492,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 4,
+              "confidence": 0.7,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 5,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 51,
+              "confidence": 0.85,
+              "accuracy": 0.9803921568627451
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 5,
+              "confidence": 0.6699999999999999,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 56,
+              "confidence": 0.8410714285714285,
+              "accuracy": 0.9821428571428571
+            }
+          ]
+        },
+        "secondary": {
+          "n": 61,
+          "brier": 0.04463114754098361,
+          "ece": 0.15655737704918032,
+          "adaptive_ece": 0.1565573770491804,
+          "mean_gap": 0.15655737704918027,
+          "mean_confidence": 0.8270491803278689,
+          "accuracy": 0.9836065573770492,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 4,
+              "confidence": 0.7,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 5,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 51,
+              "confidence": 0.85,
+              "accuracy": 0.9803921568627451
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 5,
+              "confidence": 0.6699999999999999,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 56,
+              "confidence": 0.8410714285714285,
+              "accuracy": 0.9821428571428571
+            }
+          ]
+        },
+        "secondary_minus_primary": {
+          "brier": 0.0,
+          "ece": 0.0,
+          "adaptive_ece": 0.0
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            0.0,
+            0.0
+          ],
+          "ece": [
+            0.0,
+            0.0
+          ],
+          "adaptive_ece": [
+            0.0,
+            0.0
+          ]
+        },
+        "n_boot": 2000,
+        "seed": 20261002,
+        "interpretation": "Same stored confidence on exactly the common binary-assessed facts. Difference reflects judge labels, not a newly trained calibration model. Enriched diagnostic sample; no population or causal claim."
+      }
+    },
+    {
+      "model_a": "gpt-5.6-sol",
+      "model_b": "gpt-5.6-terra",
+      "all200": {
+        "n": 200,
+        "agree": 173,
+        "disagree": 27,
+        "agreement": 0.865,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 54,
+            "contradicted": 0,
+            "unresolved": 15
+          },
+          "contradicted": {
+            "supported": 1,
+            "contradicted": 1,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "supported": 10,
+            "contradicted": 1,
+            "unresolved": 118
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 69,
+            "agree": 54,
+            "agreement": 0.782608695652174,
+            "secondary_counts": {
+              "supported": 54,
+              "contradicted": 0,
+              "unresolved": 15
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 1,
+              "contradicted": 1,
+              "unresolved": 0
+            }
+          },
+          "unresolved": {
+            "n": 129,
+            "agree": 118,
+            "agreement": 0.9147286821705426,
+            "secondary_counts": {
+              "supported": 10,
+              "contradicted": 1,
+              "unresolved": 118
+            }
+          }
+        }
+      },
+      "both_called": {
+        "n": 189,
+        "agree": 162,
+        "disagree": 27,
+        "agreement": 0.8571428571428571,
+        "confusion_primary_rows_secondary_columns": {
+          "supported": {
+            "supported": 54,
+            "contradicted": 0,
+            "unresolved": 15
+          },
+          "contradicted": {
+            "supported": 1,
+            "contradicted": 1,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "supported": 10,
+            "contradicted": 1,
+            "unresolved": 107
+          }
+        },
+        "primary_strata": {
+          "supported": {
+            "n": 69,
+            "agree": 54,
+            "agreement": 0.782608695652174,
+            "secondary_counts": {
+              "supported": 54,
+              "contradicted": 0,
+              "unresolved": 15
+            }
+          },
+          "contradicted": {
+            "n": 2,
+            "agree": 1,
+            "agreement": 0.5,
+            "secondary_counts": {
+              "supported": 1,
+              "contradicted": 1,
+              "unresolved": 0
+            }
+          },
+          "unresolved": {
+            "n": 118,
+            "agree": 107,
+            "agreement": 0.9067796610169492,
+            "secondary_counts": {
+              "supported": 10,
+              "contradicted": 1,
+              "unresolved": 107
+            }
+          }
+        }
+      },
+      "by_original_primary_stratum": {
+        "supported": {
+          "n": 85,
+          "agree": 65,
+          "disagree": 20,
+          "agreement": 0.7647058823529411,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 54,
+              "contradicted": 0,
+              "unresolved": 14
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 6,
+              "contradicted": 0,
+              "unresolved": 11
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 68,
+              "agree": 54,
+              "agreement": 0.7941176470588235,
+              "secondary_counts": {
+                "supported": 54,
+                "contradicted": 0,
+                "unresolved": 14
+              }
+            },
+            "contradicted": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 17,
+              "agree": 11,
+              "agreement": 0.6470588235294118,
+              "secondary_counts": {
+                "supported": 6,
+                "contradicted": 0,
+                "unresolved": 11
+              }
+            }
+          }
+        },
+        "contradicted": {
+          "n": 2,
+          "agree": 2,
+          "disagree": 0,
+          "agreement": 1.0,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "contradicted": {
+              "supported": 0,
+              "contradicted": 1,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 1
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 0,
+              "agree": 0,
+              "agreement": null,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "contradicted": {
+              "n": 1,
+              "agree": 1,
+              "agreement": 1.0,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 1,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 1,
+              "agree": 1,
+              "agreement": 1.0,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 1
+              }
+            }
+          }
+        },
+        "unresolved": {
+          "n": 102,
+          "agree": 95,
+          "disagree": 7,
+          "agreement": 0.9313725490196079,
+          "confusion_primary_rows_secondary_columns": {
+            "supported": {
+              "supported": 0,
+              "contradicted": 0,
+              "unresolved": 1
+            },
+            "contradicted": {
+              "supported": 1,
+              "contradicted": 0,
+              "unresolved": 0
+            },
+            "unresolved": {
+              "supported": 4,
+              "contradicted": 1,
+              "unresolved": 95
+            }
+          },
+          "primary_strata": {
+            "supported": {
+              "n": 1,
+              "agree": 0,
+              "agreement": 0.0,
+              "secondary_counts": {
+                "supported": 0,
+                "contradicted": 0,
+                "unresolved": 1
+              }
+            },
+            "contradicted": {
+              "n": 1,
+              "agree": 0,
+              "agreement": 0.0,
+              "secondary_counts": {
+                "supported": 1,
+                "contradicted": 0,
+                "unresolved": 0
+              }
+            },
+            "unresolved": {
+              "n": 100,
+              "agree": 95,
+              "agreement": 0.95,
+              "secondary_counts": {
+                "supported": 4,
+                "contradicted": 1,
+                "unresolved": 95
+              }
+            }
+          }
+        }
+      },
+      "common_binary_calibration": {
+        "n": 56,
+        "n_queries": 14,
+        "primary": {
+          "n": 56,
+          "brier": 0.059107142857142865,
+          "ece": 0.13928571428571415,
+          "adaptive_ece": 0.1392857142857143,
+          "mean_gap": 0.13928571428571435,
+          "mean_confidence": 0.825,
+          "accuracy": 0.9642857142857143,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 4,
+              "confidence": 0.7,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 5,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 46,
+              "confidence": 0.8500000000000002,
+              "accuracy": 0.9565217391304348
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 5,
+              "confidence": 0.6699999999999999,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 51,
+              "confidence": 0.8401960784313726,
+              "accuracy": 0.9607843137254902
+            }
+          ]
+        },
+        "secondary": {
+          "n": 56,
+          "brier": 0.04660714285714286,
+          "ece": 0.157142857142857,
+          "adaptive_ece": 0.15714285714285708,
+          "mean_gap": 0.15714285714285714,
+          "mean_confidence": 0.825,
+          "accuracy": 0.9821428571428571,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 4,
+              "confidence": 0.7,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 5,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 46,
+              "confidence": 0.8500000000000002,
+              "accuracy": 0.9782608695652174
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 5,
+              "confidence": 0.6699999999999999,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 51,
+              "confidence": 0.8401960784313726,
+              "accuracy": 0.9803921568627451
+            }
+          ]
+        },
+        "secondary_minus_primary": {
+          "brier": -0.012500000000000004,
+          "ece": 0.01785714285714285,
+          "adaptive_ece": 0.017857142857142794
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            -0.042857142857142844,
+            0.0
+          ],
+          "ece": [
+            0.0,
+            0.06000000000000007
+          ],
+          "adaptive_ece": [
+            0.0,
+            0.06060606060606066
+          ]
+        },
+        "n_boot": 2000,
+        "seed": 20261002,
+        "interpretation": "Same stored confidence on exactly the common binary-assessed facts. Difference reflects judge labels, not a newly trained calibration model. Enriched diagnostic sample; no population or causal claim."
+      }
+    }
+  ],
+  "counts_all200": {
+    "gpt-5.5": {
+      "unresolved": 113,
+      "supported": 85,
+      "contradicted": 2
+    },
+    "gpt-5.6-sol": {
+      "unresolved": 129,
+      "supported": 69,
+      "contradicted": 2
+    },
+    "gpt-5.6-terra": {
+      "unresolved": 133,
+      "supported": 65,
+      "contradicted": 2
+    }
+  },
+  "conditional_calibration": {
+    "estimand": "Micro-average over binary-assessed facts; CI clusters queries and retains all runs within a query.",
+    "warning": "Unresolved/missing labels are not false. Bounds are algebraic extremes, not CIs. LLM labels are not human ground truth. Domains do not establish independent sources.",
+    "groups": [
+      {
+        "method": "Helicase",
+        "fact_type": "edge",
+        "assessor": "gpt-5.5-codex-q4-v1",
+        "assessor_type": "llm",
+        "n_facts": 200,
+        "n_with_confidence": 200,
+        "n_without_confidence": 0,
+        "n_labelled_binary": 87,
+        "n_unresolved": 113,
+        "n_missing_labels": 0,
+        "label_coverage": 0.435,
+        "n_queries_assessed": 15,
+        "metrics": {
+          "n": 87,
+          "brier": 0.05298850574712644,
+          "ece": 0.1574712643678161,
+          "adaptive_ece": 0.15747126436781628,
+          "mean_gap": 0.15747126436781644,
+          "mean_confidence": 0.8195402298850571,
+          "accuracy": 0.9770114942528736,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 2,
+              "confidence": 0.525,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 6,
+              "confidence": 0.7000000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 11,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 68,
+              "confidence": 0.85,
+              "accuracy": 0.9705882352941176
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 8,
+              "confidence": 0.65625,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 79,
+              "confidence": 0.8360759493670884,
+              "accuracy": 0.9746835443037974
+            }
+          ]
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            0.03319442246835444,
+            0.08223999999999995
+          ],
+          "ece": [
+            0.10813693936877086,
+            0.1989588032581453
+          ],
+          "adaptive_ece": [
+            0.10813693936877095,
+            0.19895880325814536
+          ]
+        },
+        "brier_all_fact_bounds": [
+          0.05206250000000004,
+          0.3785624999999994
+        ],
+        "simple_baseline_brier": {
+          "constant_0.5": 0.25,
+          "domain_count_k_over_k_plus_1": 0.09683809499739979
+        }
+      },
+      {
+        "method": "Helicase",
+        "fact_type": "edge",
+        "assessor": "gpt-5.6-sol-codex-secondary-v1",
+        "assessor_type": "llm",
+        "n_facts": 200,
+        "n_with_confidence": 200,
+        "n_without_confidence": 0,
+        "n_labelled_binary": 71,
+        "n_unresolved": 129,
+        "n_missing_labels": 0,
+        "label_coverage": 0.355,
+        "n_queries_assessed": 15,
+        "metrics": {
+          "n": 71,
+          "brier": 0.05496478873239437,
+          "ece": 0.1500000000000001,
+          "adaptive_ece": 0.15000000000000008,
+          "mean_gap": 0.15000000000000002,
+          "mean_confidence": 0.821830985915493,
+          "accuracy": 0.971830985915493,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 6,
+              "confidence": 0.7000000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 8,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 56,
+              "confidence": 0.8499999999999999,
+              "accuracy": 0.9642857142857143
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.75,
+              "n": 7,
+              "confidence": 0.6785714285714286,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.75,
+              "right": 1.0,
+              "n": 64,
+              "confidence": 0.8374999999999999,
+              "accuracy": 0.96875
+            }
+          ]
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            0.03184746376811594,
+            0.09163184931506838
+          ],
+          "ece": [
+            0.09208204334365322,
+            0.19363740856844316
+          ],
+          "adaptive_ece": [
+            0.0911697860962568,
+            0.193637408568443
+          ]
+        },
+        "brier_all_fact_bounds": [
+          0.05206250000000004,
+          0.4280624999999987
+        ],
+        "simple_baseline_brier": {
+          "constant_0.5": 0.25,
+          "domain_count_k_over_k_plus_1": 0.11131272027149329
+        }
+      },
+      {
+        "method": "Helicase",
+        "fact_type": "edge",
+        "assessor": "gpt-5.6-terra-codex-tertiary-v1",
+        "assessor_type": "llm",
+        "n_facts": 200,
+        "n_with_confidence": 200,
+        "n_without_confidence": 0,
+        "n_labelled_binary": 67,
+        "n_unresolved": 133,
+        "n_missing_labels": 0,
+        "label_coverage": 0.335,
+        "n_queries_assessed": 15,
+        "metrics": {
+          "n": 67,
+          "brier": 0.05511194029850747,
+          "ece": 0.1455223880597014,
+          "adaptive_ece": 0.1455223880597015,
+          "mean_gap": 0.14552238805970152,
+          "mean_confidence": 0.8246268656716418,
+          "accuracy": 0.9701492537313433,
+          "bins": [
+            {
+              "left": 0.5,
+              "right": 0.6000000000000001,
+              "n": 1,
+              "confidence": 0.55,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.6000000000000001,
+              "right": 0.7000000000000001,
+              "n": 6,
+              "confidence": 0.7000000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.7000000000000001,
+              "right": 0.8,
+              "n": 5,
+              "confidence": 0.75,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.8,
+              "right": 0.9,
+              "n": 55,
+              "confidence": 0.8500000000000001,
+              "accuracy": 0.9636363636363636
+            }
+          ],
+          "adaptive_bins": [
+            {
+              "left": 0.0,
+              "right": 0.73,
+              "n": 7,
+              "confidence": 0.6785714285714286,
+              "accuracy": 1.0
+            },
+            {
+              "left": 0.73,
+              "right": 1.0,
+              "n": 60,
+              "confidence": 0.8416666666666667,
+              "accuracy": 0.9666666666666667
+            }
+          ]
+        },
+        "query_cluster_bootstrap_95ci": {
+          "brier": [
+            0.03099962121212123,
+            0.09147092661691532
+          ],
+          "ece": [
+            0.09047305764411029,
+            0.19141276041666647
+          ],
+          "adaptive_ece": [
+            0.09047305764411025,
+            0.1914127604166666
+          ]
+        },
+        "brier_all_fact_bounds": [
+          0.05206250000000004,
+          0.4390624999999988
+        ],
+        "simple_baseline_brier": {
+          "constant_0.5": 0.25,
+          "domain_count_k_over_k_plus_1": 0.10880309028072385
+        }
+      }
+    ],
+    "n_boot": 2000,
+    "seed": 20261002
+  },
+  "scope": "Frozen primary-label-enriched sample:85supported+2contradicted+113/921unresolved; seed20261002. Descriptive diagnostics, not population agreement.",
+  "limitations": [
+    "All three are requested OpenAI model IDs; no cross-provider independence or architectural difference established.",
+    "CLI does not attest server model snapshots. Same evidence and prompt replayed.",
+    "11 mechanical unresolved items are excluded from actual three-model agreement.",
+    "Unresolved is not false; majority vote is not ground truth. No labels overwritten.",
+    "Each calibration estimate is conditional on binary coverage; pairwise deltas use the same facts and confidence scores."
+  ],
+  "publication_note": "Aggregate release; per-fact identifiers and private source/response text excluded. Full local evidence was audited before publication."
+}

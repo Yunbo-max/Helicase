@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-02T23:15:30.388864+00:00",
+  "status": "passed",
+  "previous_artifacts_unchanged": 1542,
+  "secondary": {
+    "status": "passed",
+    "at": "2026-10-02T23:15:27.690786+00:00",
+    "facts": 200,
+    "completed_model_invocations": 189,
+    "zero_call_no_evidence": 11,
+    "rejected_gpt6_invocations": 1,
+    "total_new_cli_invocations": 190,
+    "primary_items_unchanged": 1008,
+    "protected_files_unchanged": 9,
+    "sample_and_source_hashes_unchanged": true,
+    "all_prompts_replayed_exactly": true,
+    "model_request": "gpt-5.6-sol",
+    "server_model_snapshot_attested": false,
+    "no_tool_events": true,
+    "usage_totals": {
+      "input_tokens": 2348371,
+      "cached_input_tokens": 1002496,
+      "output_tokens": 37499,
+      "reasoning_output_tokens": 4119
+    },
+    "usage_note": "CLI turn.completed tokens, not billing or measured HTTP request count."
+  },
+  "tertiary": {
+    "status": "passed",
+    "at": "2026-10-02T23:15:28.051349+00:00",
+    "facts": 200,
+    "completed_model_invocations": 189,
+    "zero_call_no_evidence": 11,
+    "historical_rejected_gpt6_invocations": 1,
+    "total_new_cli_invocations": 189,
+    "primary_items_unchanged": 1008,
+    "protected_files_unchanged": 9,
+    "sample_and_source_hashes_unchanged": true,
+    "all_prompts_replayed_exactly": true,
+    "model_request": "gpt-5.6-terra",
+    "server_model_snapshot_attested": false,
+    "no_tool_events": true,
+    "usage_totals": {
+      "input_tokens": 2348359,
+      "cached_input_tokens": 1059328,
+      "output_tokens": 23066,
+      "reasoning_output_tokens": 280
+    },
+    "usage_note": "CLI turn.completed tokens, not billing or measured HTTP request count."
+  },
+  "new_cli_invocations_this_extension": 189,
+  "successful_additional_judge_invocations_cumulative": 378,
+  "failed_historical_gpt6_invocations": 1
+}

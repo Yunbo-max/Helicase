@@ -1,5 +1,18 @@
 # Validation record — software, not new paper experiments
 
+## Three-model frozen-sample evaluation — 2026-10-03 (Europe/London)
+
+- Public aggregate results and byte-identical execution snapshots: [model diversity release](reproducibility/model_diversity_20261003/README_ZH.md). Raw source text, per-fact labels, model responses, account traces and credentials remain private.
+- Frozen primary-label-enriched sample: 85 supported, 2 contradicted, 113 of 921 unresolved; seed 20261002. Same prompt and source payloads were replayed. These are sample diagnostics, not population estimates.
+- Added requested model IDs `gpt-5.6-sol` and `gpt-5.6-terra`, medium reasoning. Each completed 200 records: 189 successful CLI invocations and 11 zero-call no-evidence unresolved records. Each passed a two-call pilot before continuation. An earlier `gpt-6-sol` attempt was rejected by the account route and is not counted as a judgment.
+- Among the 189 actual three-model assessments: 150 unanimous (79.37%), 38 two-agree/one-different, 1 all-different; 39 total disagreements. Pairwise agreement: GPT-5.5/Sol 169/189, GPT-5.5/Terra 157/189, Sol/Terra 162/189.
+- The models are from the same provider; no independent training lineage, human validation, or server model snapshot is attested. No majority labels replaced original labels. CLI invocation/token records are not measured HTTP counts or billing statements.
+- Offline audits passed for exact prompts, original evidence, unique calls and retained outputs. All 1,542 prior sample/secondary-run artifacts, 1,008 primary items and nine protected original files kept their hashes.
+- The private full suite passed **110 tests in 4.41s**. The publication checkout independently passed **101 tests, 1 skipped in 3.76s** using `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p no:capture reviewer_analysis/revision_v2/tests reviewer_analysis/revision_v2/reproducibility/model_diversity_20261003`. The skip requires the unpublished private primary batch driver; eight legacy GPT6 transport tests also remain local.
+- Public snapshots retain the actual local execution assumptions, including required private manifests and an original-machine hash file. They are not a turnkey dataset release or a new instruction to rerun completed jobs. Public aggregate JSON excludes per-fact identifiers and full source/response text.
+
+Author-confirmed reference graphs, real expert ratings and repeated/strict-budget agent experiments remain outstanding. No 240-run job was launched.
+
 ## Local Q4 archive evaluation — 2026-10-02
 
 - Software suite: **81 passed** (`PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p no:capture`). The clean public package was separately verified: **80 passed, 1 skipped**; the skipped case requires the intentionally unpublished private batch driver.
