@@ -1,0 +1,15 @@
+{
+  "gpt-5.5": {
+    "cli_invocations": 20,
+    "input_tokens": 236004,
+    "output_tokens": 32035,
+    "cached_input_tokens": 116224
+  },
+  "gpt-5.6-sol": {
+    "cli_invocations": 21,
+    "input_tokens": 265430,
+    "output_tokens": 36353,
+    "cached_input_tokens": 81920
+  },
+  "note": "CLI invocations and CLI-reported tokens, not verified HTTP requests, billing or model snapshot identities."
+}

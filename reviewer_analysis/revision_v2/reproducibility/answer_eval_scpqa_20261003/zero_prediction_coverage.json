@@ -1,0 +1,142 @@
+[
+  {
+    "method": "Helicase",
+    "query_id": "Q68",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q68",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q73",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Helicase",
+    "query_id": "Q69",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q69",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Claude",
+    "query_id": "Q72",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Helicase",
+    "query_id": "Q72",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Qwen3-235B",
+    "query_id": "Q72",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q72",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q72",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q67",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q67",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q62",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Claude",
+    "query_id": "Q65",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Helicase",
+    "query_id": "Q65",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Qwen3-235B",
+    "query_id": "Q65",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q65",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Helicase",
+    "query_id": "Q75",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q79",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q79",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Qwen3-235B",
+    "query_id": "Q66",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q66",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q71",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Claude",
+    "query_id": "Q63",
+    "n_pred_units": 0
+  },
+  {
+    "method": "Helicase",
+    "query_id": "Q63",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q63",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ReAct",
+    "query_id": "Q70",
+    "n_pred_units": 0
+  },
+  {
+    "method": "ToT",
+    "query_id": "Q70",
+    "n_pred_units": 0
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "scope": "All seven binary match-status disagreements inspected by execution agent; not independent human adjudication.",
+  "scores_changed": false,
+  "cases": [
+    {
+      "query_id": "Q62",
+      "method": "Helicase",
+      "issue": "Asserted answer with explicitly qualified confidence and lack of definitive sweetener exclusion."
+    },
+    {
+      "query_id": "Q70",
+      "method": "Qwen3-235B",
+      "issue": "Device possibility versus series-level reference; may-question scope."
+    },
+    {
+      "query_id": "Q76",
+      "method": "Qwen3-235B",
+      "issue": "Ariel Ultra Concentrate identity as liquid formulation."
+    },
+    {
+      "query_id": "Q77",
+      "method": "Helicase",
+      "issue": "Production assertion/quote and planned status differ in the frozen unit."
+    },
+    {
+      "query_id": "Q77",
+      "method": "ToT",
+      "issue": "Prospective production wording and categorical final answer coexist."
+    },
+    {
+      "query_id": "Q79",
+      "method": "Claude",
+      "issue": "GSK/Haleon entity and corporate-scope equivalence."
+    },
+    {
+      "query_id": "Q80",
+      "method": "GLM",
+      "issue": "Atom family assertion and qualification about production/SKU mix."
+    }
+  ]
+}

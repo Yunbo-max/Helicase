@@ -1,0 +1,870 @@
+{
+  "status": "complete_fixed_prediction_scpqa_matching",
+  "models": [
+    "gpt-5.5",
+    "gpt-5.6-sol"
+  ],
+  "reference_file": "benchmark/scpqa.jsonl",
+  "reference_author_confirmed": true,
+  "n_method_query_judge_scores": 280,
+  "summary": [
+    {
+      "method": "Helicase",
+      "judges": 2,
+      "answer_precision": 0.49303030303030304,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.5180303030303031,
+        "gpt-5.6-sol": 0.4680303030303031
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.33332954545454546,
+        0.6513674242424242
+      ],
+      "answer_recall": 0.6583333333333333,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.6833333333333333,
+        "gpt-5.6-sol": 0.6333333333333333
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.4583333333333333,
+        0.8458333333333332
+      ],
+      "answer_f1": 0.5484920634920635,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.5734920634920635,
+        "gpt-5.6-sol": 0.5234920634920635
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.3794444444444444,
+        0.7108759920634921
+      ]
+    },
+    {
+      "method": "Claude",
+      "judges": 2,
+      "answer_precision": 0.5237499999999999,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.53,
+        "gpt-5.6-sol": 0.5175
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.3416666666666667,
+        0.7070833333333333
+      ],
+      "answer_recall": 0.5443452380952382,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.5505952380952381,
+        "gpt-5.6-sol": 0.5380952380952382
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.35119047619047616,
+        0.7333333333333333
+      ],
+      "answer_f1": 0.5266071428571428,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.5328571428571428,
+        "gpt-5.6-sol": 0.5203571428571429
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.34375,
+        0.7086339285714286
+      ]
+    },
+    {
+      "method": "DeepSeek",
+      "judges": 2,
+      "answer_precision": 0.19214285714285714,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.19214285714285714,
+        "gpt-5.6-sol": 0.19214285714285714
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.08354464285714287,
+        0.3196428571428572
+      ],
+      "answer_recall": 0.19255952380952382,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.19255952380952382,
+        "gpt-5.6-sol": 0.19255952380952382
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.08214285714285713,
+        0.32589285714285715
+      ],
+      "answer_f1": 0.1723448773448773,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.1723448773448773,
+        "gpt-5.6-sol": 0.1723448773448773
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.0769119769119769,
+        0.2801738816738817
+      ]
+    },
+    {
+      "method": "GLM",
+      "judges": 2,
+      "answer_precision": 0.16250000000000003,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.15833333333333335,
+        "gpt-5.6-sol": 0.16666666666666669
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.057499999999999996,
+        0.29666666666666663
+      ],
+      "answer_recall": 0.253125,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.25,
+        "gpt-5.6-sol": 0.25625
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.1,
+        0.45
+      ],
+      "answer_f1": 0.19297619047619047,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.18940476190476188,
+        "gpt-5.6-sol": 0.19654761904761903
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.06964285714285715,
+        0.34273809523809523
+      ]
+    },
+    {
+      "method": "Qwen3-235B",
+      "judges": 2,
+      "answer_precision": 0.06833333333333333,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.06833333333333333,
+        "gpt-5.6-sol": 0.06833333333333333
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.005,
+        0.15666666666666668
+      ],
+      "answer_recall": 0.11875,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.1125,
+        "gpt-5.6-sol": 0.125
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.00625,
+        0.26875
+      ],
+      "answer_f1": 0.08603174603174604,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.08444444444444443,
+        "gpt-5.6-sol": 0.08761904761904762
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.005555555555555555,
+        0.19428571428571428
+      ]
+    },
+    {
+      "method": "ReAct",
+      "judges": 2,
+      "answer_precision": 0.3,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.3,
+        "gpt-5.6-sol": 0.3
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.125,
+        0.5
+      ],
+      "answer_recall": 0.19166666666666665,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.19166666666666665,
+        "gpt-5.6-sol": 0.19166666666666665
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.0625,
+        0.3458333333333333
+      ],
+      "answer_f1": 0.21523809523809523,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.21523809523809523,
+        "gpt-5.6-sol": 0.21523809523809523
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.07857142857142857,
+        0.37357142857142855
+      ]
+    },
+    {
+      "method": "ToT",
+      "judges": 2,
+      "answer_precision": 0.2958333333333333,
+      "answer_precision_judge_means": {
+        "gpt-5.5": 0.3083333333333333,
+        "gpt-5.6-sol": 0.2833333333333333
+      },
+      "answer_precision_95ci_query_bootstrap": [
+        0.13333333333333333,
+        0.475
+      ],
+      "answer_recall": 0.2747023809523809,
+      "answer_recall_judge_means": {
+        "gpt-5.5": 0.28720238095238093,
+        "gpt-5.6-sol": 0.2622023809523809
+      },
+      "answer_recall_95ci_query_bootstrap": [
+        0.1125,
+        0.4541666666666667
+      ],
+      "answer_f1": 0.27325757575757575,
+      "answer_f1_judge_means": {
+        "gpt-5.5": 0.28575757575757577,
+        "gpt-5.6-sol": 0.26075757575757574
+      },
+      "answer_f1_95ci_query_bootstrap": [
+        0.11725757575757578,
+        0.44744318181818155
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "a": "Helicase",
+      "b": "Claude",
+      "metric": "answer_precision",
+      "mean_difference": -0.03071969696969696,
+      "ci95_query_bootstrap": [
+        -0.17045454545454544,
+        0.11318560606060601
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "Claude",
+      "metric": "answer_recall",
+      "mean_difference": 0.11398809523809525,
+      "ci95_query_bootstrap": [
+        0.01875,
+        0.22590029761904754
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "Claude",
+      "metric": "answer_f1",
+      "mean_difference": 0.02188492063492063,
+      "ci95_query_bootstrap": [
+        -0.09815525793650792,
+        0.15238095238095237
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "DeepSeek",
+      "metric": "answer_precision",
+      "mean_difference": 0.30088744588744587,
+      "ci95_query_bootstrap": [
+        0.16083089826839828,
+        0.44651650432900425
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "DeepSeek",
+      "metric": "answer_recall",
+      "mean_difference": 0.4657738095238096,
+      "ci95_query_bootstrap": [
+        0.29583333333333334,
+        0.6354166666666666
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "DeepSeek",
+      "metric": "answer_f1",
+      "mean_difference": 0.3761471861471861,
+      "ci95_query_bootstrap": [
+        0.23276875901875899,
+        0.5234930555555555
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "GLM",
+      "metric": "answer_precision",
+      "mean_difference": 0.330530303030303,
+      "ci95_query_bootstrap": [
+        0.17522159090909092,
+        0.4956818181818182
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "GLM",
+      "metric": "answer_recall",
+      "mean_difference": 0.4052083333333333,
+      "ci95_query_bootstrap": [
+        0.209375,
+        0.6052083333333333
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "GLM",
+      "metric": "answer_f1",
+      "mean_difference": 0.355515873015873,
+      "ci95_query_bootstrap": [
+        0.1908323412698413,
+        0.5290515873015872
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "Qwen3-235B",
+      "metric": "answer_precision",
+      "mean_difference": 0.42469696969696963,
+      "ci95_query_bootstrap": [
+        0.2743882575757576,
+        0.5781818181818181
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "Qwen3-235B",
+      "metric": "answer_recall",
+      "mean_difference": 0.5395833333333333,
+      "ci95_query_bootstrap": [
+        0.3333333333333333,
+        0.7458333333333333
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "Qwen3-235B",
+      "metric": "answer_f1",
+      "mean_difference": 0.4624603174603175,
+      "ci95_query_bootstrap": [
+        0.29876289682539686,
+        0.6280962301587301
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ReAct",
+      "metric": "answer_precision",
+      "mean_difference": 0.19303030303030302,
+      "ci95_query_bootstrap": [
+        0.014015151515151513,
+        0.38167613636363623
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ReAct",
+      "metric": "answer_recall",
+      "mean_difference": 0.4666666666666667,
+      "ci95_query_bootstrap": [
+        0.275,
+        0.6583333333333333
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ReAct",
+      "metric": "answer_f1",
+      "mean_difference": 0.33325396825396825,
+      "ci95_query_bootstrap": [
+        0.17654166666666665,
+        0.4980962301587301
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": 0.1971969696969697,
+      "ci95_query_bootstrap": [
+        0.0696969696969697,
+        0.3291723484848484
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": 0.38363095238095235,
+      "ci95_query_bootstrap": [
+        0.1898809523809524,
+        0.5836309523809524
+      ]
+    },
+    {
+      "a": "Helicase",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": 0.2752344877344877,
+      "ci95_query_bootstrap": [
+        0.13333035714285715,
+        0.42416928210678206
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "DeepSeek",
+      "metric": "answer_precision",
+      "mean_difference": 0.3316071428571429,
+      "ci95_query_bootstrap": [
+        0.19902976190476193,
+        0.4682142857142857
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "DeepSeek",
+      "metric": "answer_recall",
+      "mean_difference": 0.35178571428571426,
+      "ci95_query_bootstrap": [
+        0.20949404761904764,
+        0.5
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "DeepSeek",
+      "metric": "answer_f1",
+      "mean_difference": 0.3542622655122655,
+      "ci95_query_bootstrap": [
+        0.22505451839826834,
+        0.48281561147186136
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "GLM",
+      "metric": "answer_precision",
+      "mean_difference": 0.36125,
+      "ci95_query_bootstrap": [
+        0.225,
+        0.4974999999999999
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "GLM",
+      "metric": "answer_recall",
+      "mean_difference": 0.2912202380952381,
+      "ci95_query_bootstrap": [
+        0.1416592261904762,
+        0.4485119047619047
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "GLM",
+      "metric": "answer_f1",
+      "mean_difference": 0.33363095238095236,
+      "ci95_query_bootstrap": [
+        0.2013690476190476,
+        0.4658348214285715
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "Qwen3-235B",
+      "metric": "answer_precision",
+      "mean_difference": 0.4554166666666667,
+      "ci95_query_bootstrap": [
+        0.29208333333333336,
+        0.6225104166666665
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "Qwen3-235B",
+      "metric": "answer_recall",
+      "mean_difference": 0.42559523809523814,
+      "ci95_query_bootstrap": [
+        0.24968749999999998,
+        0.6083333333333332
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "Qwen3-235B",
+      "metric": "answer_f1",
+      "mean_difference": 0.4405753968253968,
+      "ci95_query_bootstrap": [
+        0.2783333333333334,
+        0.6073020833333332
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ReAct",
+      "metric": "answer_precision",
+      "mean_difference": 0.22374999999999998,
+      "ci95_query_bootstrap": [
+        0.09999999999999998,
+        0.3604166666666667
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ReAct",
+      "metric": "answer_recall",
+      "mean_difference": 0.35267857142857145,
+      "ci95_query_bootstrap": [
+        0.19224702380952383,
+        0.5235267857142856
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ReAct",
+      "metric": "answer_f1",
+      "mean_difference": 0.31136904761904766,
+      "ci95_query_bootstrap": [
+        0.17595238095238097,
+        0.4547083333333333
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": 0.22791666666666668,
+      "ci95_query_bootstrap": [
+        0.06666666666666667,
+        0.40625
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": 0.26964285714285713,
+      "ci95_query_bootstrap": [
+        0.08125,
+        0.475
+      ]
+    },
+    {
+      "a": "Claude",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": 0.2533495670995671,
+      "ci95_query_bootstrap": [
+        0.08708333333333333,
+        0.4367403950216449
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "GLM",
+      "metric": "answer_precision",
+      "mean_difference": 0.029642857142857148,
+      "ci95_query_bootstrap": [
+        -0.06785714285714284,
+        0.13083333333333333
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "GLM",
+      "metric": "answer_recall",
+      "mean_difference": -0.0605654761904762,
+      "ci95_query_bootstrap": [
+        -0.16250000000000003,
+        0.026041666666666664
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "GLM",
+      "metric": "answer_f1",
+      "mean_difference": -0.02063131313131314,
+      "ci95_query_bootstrap": [
+        -0.08983766233766233,
+        0.043413961038961016
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "Qwen3-235B",
+      "metric": "answer_precision",
+      "mean_difference": 0.12380952380952381,
+      "ci95_query_bootstrap": [
+        0.04595238095238095,
+        0.21214285714285713
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "Qwen3-235B",
+      "metric": "answer_recall",
+      "mean_difference": 0.0738095238095238,
+      "ci95_query_bootstrap": [
+        -0.029166666666666667,
+        0.17916666666666667
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "Qwen3-235B",
+      "metric": "answer_f1",
+      "mean_difference": 0.08631313131313131,
+      "ci95_query_bootstrap": [
+        0.01682449494949494,
+        0.16766341991341985
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ReAct",
+      "metric": "answer_precision",
+      "mean_difference": -0.10785714285714287,
+      "ci95_query_bootstrap": [
+        -0.230375,
+        0.009999999999999998
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ReAct",
+      "metric": "answer_recall",
+      "mean_difference": 0.0008928571428571425,
+      "ci95_query_bootstrap": [
+        -0.07916666666666666,
+        0.07499999999999998
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ReAct",
+      "metric": "answer_f1",
+      "mean_difference": -0.04289321789321789,
+      "ci95_query_bootstrap": [
+        -0.10915692640692644,
+        0.0185434704184704
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": -0.10369047619047618,
+      "ci95_query_bootstrap": [
+        -0.2536904761904762,
+        0.033339285714285634
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": -0.08214285714285714,
+      "ci95_query_bootstrap": [
+        -0.24583333333333335,
+        0.07502976190476147
+      ]
+    },
+    {
+      "a": "DeepSeek",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": -0.10091269841269843,
+      "ci95_query_bootstrap": [
+        -0.2428617424242424,
+        0.03537121212121202
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "Qwen3-235B",
+      "metric": "answer_precision",
+      "mean_difference": 0.09416666666666666,
+      "ci95_query_bootstrap": [
+        0.0050000000000000044,
+        0.19666666666666666
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "Qwen3-235B",
+      "metric": "answer_recall",
+      "mean_difference": 0.134375,
+      "ci95_query_bootstrap": [
+        0.009375,
+        0.29375
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "Qwen3-235B",
+      "metric": "answer_f1",
+      "mean_difference": 0.10694444444444444,
+      "ci95_query_bootstrap": [
+        0.007619047619047617,
+        0.2230992063492063
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ReAct",
+      "metric": "answer_precision",
+      "mean_difference": -0.1375,
+      "ci95_query_bootstrap": [
+        -0.2700208333333334,
+        -0.025
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ReAct",
+      "metric": "answer_recall",
+      "mean_difference": 0.06145833333333335,
+      "ci95_query_bootstrap": [
+        -0.06041666666666666,
+        0.18856770833333297
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ReAct",
+      "metric": "answer_f1",
+      "mean_difference": -0.02226190476190476,
+      "ci95_query_bootstrap": [
+        -0.11642857142857144,
+        0.06583333333333333
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": -0.13333333333333333,
+      "ci95_query_bootstrap": [
+        -0.29500000000000004,
+        0.019166666666666672
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": -0.02157738095238093,
+      "ci95_query_bootstrap": [
+        -0.20492187499999998,
+        0.16488839285714277
+      ]
+    },
+    {
+      "a": "GLM",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": -0.08028138528138529,
+      "ci95_query_bootstrap": [
+        -0.23362256493506492,
+        0.07305194805194803
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ReAct",
+      "metric": "answer_precision",
+      "mean_difference": -0.23166666666666663,
+      "ci95_query_bootstrap": [
+        -0.4066666666666666,
+        -0.08333333333333334
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ReAct",
+      "metric": "answer_recall",
+      "mean_difference": -0.07291666666666666,
+      "ci95_query_bootstrap": [
+        -0.16255208333333332,
+        0.0
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ReAct",
+      "metric": "answer_f1",
+      "mean_difference": -0.1292063492063492,
+      "ci95_query_bootstrap": [
+        -0.22753968253968254,
+        -0.04285714285714286
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": -0.22749999999999998,
+      "ci95_query_bootstrap": [
+        -0.39499999999999996,
+        -0.08164583333333364
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": -0.15595238095238093,
+      "ci95_query_bootstrap": [
+        -0.32619791666666664,
+        -0.010111607142857248
+      ]
+    },
+    {
+      "a": "Qwen3-235B",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": -0.18722582972582974,
+      "ci95_query_bootstrap": [
+        -0.3424242424242424,
+        -0.052224296536796604
+      ]
+    },
+    {
+      "a": "ReAct",
+      "b": "ToT",
+      "metric": "answer_precision",
+      "mean_difference": 0.00416666666666668,
+      "ci95_query_bootstrap": [
+        -0.175,
+        0.19166666666666668
+      ]
+    },
+    {
+      "a": "ReAct",
+      "b": "ToT",
+      "metric": "answer_recall",
+      "mean_difference": -0.08303571428571428,
+      "ci95_query_bootstrap": [
+        -0.23095238095238094,
+        0.04791666666666666
+      ]
+    },
+    {
+      "a": "ReAct",
+      "b": "ToT",
+      "metric": "answer_f1",
+      "mean_difference": -0.05801948051948051,
+      "ci95_query_bootstrap": [
+        -0.19643262987012985,
+        0.07341098484848481
+      ]
+    }
+  ],
+  "limitations": [
+    "Retrospective evaluator repair; reference cards are AI-maintained, not independent human gold.",
+    "All judges from same provider; not cross-provider replication.",
+    "Every judge matches the SAME frozen reference-blind prediction units; input extraction uncertainty remains shared.",
+    "Intervals resample 20 questions, not 20 times number of judges; one archived generation run per method.",
+    "Reference agreement, not verified factual accuracy or citation support.",
+    "Prediction role/granularity reviews by the execution agent are recorded; they are not independent human annotation. This is a retrospective protocol repair, not a preregistered experiment.",
+    "Fixed predictions excluded some epistemic admissions before scpqa selection; six Helicase query rows have no retained predictions. See scope coverage."
+  ]
+}

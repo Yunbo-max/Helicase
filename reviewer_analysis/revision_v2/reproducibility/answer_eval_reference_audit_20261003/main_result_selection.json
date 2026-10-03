@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-03",
+  "purpose": "withdrawn_main_result_designation",
+  "protocol": "answer_blind_v4",
+  "reference_file": "benchmark/gt_q4.jsonl",
+  "reference_sha256": "92d14d8febb49827e50b051094e88327f555abf1829ffd1232c2a8c7b2ffa090",
+  "judges": [
+    "gpt-5.5",
+    "gpt-5.6-sol"
+  ],
+  "primary_metric": "answer_f1",
+  "adjacent_metrics": [
+    "answer_precision",
+    "answer_recall"
+  ],
+  "result_version": "reviewed_with_two_explicit_AI_protocol_corrections",
+  "per_query_file": "new_gt_q4_reviewed_per_query.csv",
+  "summary_file": "new_gt_q4_reviewed_summary.json",
+  "legacy_score_reproduction_required": false,
+  "reference_independent_provenance_verified": false,
+  "new_model_calls_for_this_update": 0,
+  "hashes": {
+    "new_gt_q4_reviewed_per_query.csv": "10fc68a79e4d3a541c94f8a1f2431b83b2136fa9d5aad95008687b7f6941d844",
+    "new_gt_q4_reviewed_summary.json": "e149a8a5e8abb43dd89b000183e72b11b0001e0ce42997232421416bd38a4bb2"
+  },
+  "selection_status": "withdrawn_after_user_clarified_first_place_result",
+  "note": "The files identified here remain gt_q4 sensitivity results; they are not the designated replacement main result. Verified first-place result uses legacy replay with scpqa. New-protocol scpqa results are not available."
+}

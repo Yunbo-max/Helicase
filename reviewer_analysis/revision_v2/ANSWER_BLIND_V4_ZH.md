@@ -1,8 +1,8 @@
-> **版本追溯更正：V4 新评估与首次旧算法重跑采用 `gt_q4.jsonl`。历史保存的 420 条 Q1–Q3 reference 与 `scpqa.jsonl` 全部一致，Q4 Recall 分母也全部兼容后者；两版 Q4 全部不同。另行复用抽取结果执行 scpqa.jsonl 版本的旧算法匹配，不能把不同 reference 的分差全部归因于指标或方法。正式版本及来源独立性待作者确认。**
+> **当前已完成：作者确认的 scpqa.jsonl × 原 V4 冻结预测项 × GPT‑5.5/GPT‑5.6‑Sol，共 280 条评分。主要结果见[新版 scpqa 结果](reproducibility/answer_eval_scpqa_20261003/README_ZH.md)。gt_q4 结果仅作版本对照；旧分数复现不是当前任务。冻结预测中的 epistemic exclusions 与 scpqa 的适配限制保留披露。**
 
-# Q4 答案语义评估与旧代码复现
+# Q4 新答案语义评估协议
 
-本轮按作者确认的协议执行：答案语义 Precision、Recall、F1 为主，三项分别逐题宏平均；旧复合分及结构项单列；引用支持单独报告。全部七个方法、Q61–Q80 使用原存档报告，不重跑搜索 agent。
+本轮按作者确认的协议执行：答案语义 Precision、Recall、F1 为主，三项分别逐题宏平均；旧复合分及结构项仅保留归档；引用支持单独报告。全部七个方法、Q61–Q80 使用原存档报告，不重跑搜索 agent。
 
 ## 新协议
 
@@ -18,7 +18,7 @@
 
 V3/V3.1 抽取看过 reference，与此次协议不兼容，仅保留为诊断。V4 仍属事后修订评估，抽取和参考维护共享 AI 误差；两个同提供商 Judge 的一致性不能替代人工效度核验。
 
-## 原代码复现
+## 归档：原代码复现（不再是当前待办）
 
 `legacy_replay.py` 执行归档 `reproducibility/historical_q4_metric_20261003/eval_scpqa.py`，不修改其评分代码。原代码和当前 `benchmark/eval_scpqa.py` 在准备输入时字节相同。
 
@@ -28,6 +28,6 @@ V3/V3.1 抽取看过 reference，与此次协议不兼容，仅保留为诊断�
 
 ## 本地结果与覆盖
 
-公开结果见 [最新结果包](reproducibility/answer_eval_reference_audit_20261003/README_ZH.md)。私人输出位于 `private/complementary_eval_v1/answer_blind_v4/`、`private/complementary_eval_v1/legacy_replay_gpt55_v1/` 和 `private/complementary_eval_v1/legacy_replay_scpqa_gpt55_v1/`。以各目录 `progress.json`、`status.json` 和最终结果文档确认实际完成度，不把执行协议当作结果。
+当前公开结果见 [scpqa 新协议结果包](reproducibility/answer_eval_scpqa_20261003/README_ZH.md)，对应私人输出为 `private/complementary_eval_v1/answer_blind_scpqa_v1/`。以下是归档目录： `private/complementary_eval_v1/answer_blind_v4/`、`private/complementary_eval_v1/legacy_replay_gpt55_v1/` 和 `private/complementary_eval_v1/legacy_replay_scpqa_gpt55_v1/`。以各目录 `progress.json`、`status.json` 和最终结果文档确认实际完成度，不把执行协议当作结果。
 
 原历史值、旧流程新复现值、新答案语义值分开保存。已有原生边引用诊断可复用；统一跨方法引用支持率、独立人工评分与严格预算匹配独立 agent 运行未因此完成。

@@ -1,0 +1,26 @@
+{
+  "reference_sha256": "a1fb45816d691ea6d412aa3a249b9291685604628c35cffb7d825b2a91ee7f73",
+  "reference_author_confirmed": true,
+  "reference_independent_provenance_verified": false,
+  "prediction_file_sha256": "2b00f816af03a4f95a774d9d2304da6019798eb9b003c691fde4b8181d695492",
+  "tasks_sha256": "3c0faebdb70662c68be6e446465413dca4890988bcb5a4643e82d1768ed82515",
+  "cards_sha256": "f0d552e16defe11b2bfcf332f61b4453f49475484f28423c579aebd2087cbc77",
+  "match_prompt_sha256": "ccc8431a2a5b89ebfd75c97329844e1d3a1a042d37962b48c2b68d921dd53082",
+  "protocol": "blind_direct_answers_v4",
+  "source_protocol": "answer_blind_v4",
+  "predictions_unchanged": true,
+  "units": 517,
+  "tasks_per_judge": 20,
+  "judges": [
+    "gpt-5.5",
+    "gpt-5.6-sol"
+  ],
+  "reference_only_epistemic_questions": [
+    "Q63",
+    "Q65",
+    "Q68",
+    "Q72",
+    "Q75"
+  ],
+  "scope_note": "Frozen V4 predictions excluded many epistemic admissions before scpqa was selected. This fixed-prediction sensitivity is retained and must be reported, not silently repaired to improve agreement."
+}
