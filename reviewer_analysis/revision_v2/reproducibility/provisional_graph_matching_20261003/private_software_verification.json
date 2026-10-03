@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-03T09:35:11.654546+00:00",
+  "command": "python -m pytest -p no:capture -q reviewer_analysis/revision_v2/tests reviewer_analysis/revision_v2/private/reference_draft_v1/test_draft.py reviewer_analysis/revision_v2/private/reference_draft_v1/test_review_packet.py reviewer_analysis/revision_v2/private/provisional_match_v1/test_repair.py",
+  "passed": 88,
+  "failed": 0,
+  "seconds": 3.87,
+  "exit_code": 0,
+  "capture_plugin_disabled_reason": "Previously diagnosed local native readline crash during pytest capture plugin startup. No tests use capsys/capfd.",
+  "repair_regressions": "Original failed item immutable; invalid repair retained with no score; cached/interrupted repairs cannot spend again. Three tests failed before implementation and passed after.",
+  "analysis_review": "Independent read-only code review of audit and bootstrap; synthetic constant-data numerical checks passed. Incomplete140-task audit rejection verified."
+}

@@ -1,5 +1,16 @@
 # Validation record — software, not new paper experiments
 
+## Provisional Q4 graph matching — 2026-10-03 (Europe/London)
+
+- [Public report, numeric results and execution snapshots](reproducibility/provisional_graph_matching_20261003/README_ZH.md): 140/140 results, seven methods × 20 queries. These use AI-reviewed prose-reference drafts, **not author-confirmed complete gold**.
+- Reference preparation: 20 GPT-5.5 CLI calls; 435 nodes, 496 edges; 148 logged offline edits, including quotation context expansions. Original prose and predictions were unchanged. Author confirmation remains absent.
+- Matching: 140 initial GPT-5.5 CLI calls plus four structural-validation repairs (DeepSeek 2, Helicase 1, Qwen3-235B 1). Original invalid responses remain retained locally; successful outputs were not rejudged. All 144 traces, exact prompts, token records, one-to-one directed pairs and scores were audited. No failed query was silently excluded.
+- Helicase provisional macro Graph F1: 0.2097204611. All six paired mean-difference bootstrap 95% intervals include zero. The result does not establish a clear Helicase advantage. Graph F1 uses 0.6 entity F1 + 0.4 relation F1; 2,000 query bootstrap resamples, seed 20261003, conditional on a fixed reference and matcher.
+- The related local suite passed **88 tests in 3.87s**. The publication checkout passed **108 tests, 1 skipped in 3.36s** over the public revision tests and both reproducibility releases, using disabled plugin autoload and `-p no:capture`. The existing skip needs the unpublished primary batch driver.
+- All 140 public CSV rows were independently recomputed and checked against summary means. Eight execution scripts and seven numeric/report artifacts were copied byte-for-byte; provenance hashes are published. Raw references, graphs, match-pair mappings, model outputs/account traces, author forms and credentials remain local. These snapshots require private inputs and original path layouts; they are not a turnkey reproduction release.
+- No extraction, source retrieval, primary fact judging or agent repeats were restarted. Formal author-confirmed reference evaluation, independent human ratings and strict-budget repeated agent experiments remain outstanding. No 240-run job was launched.
+
+
 ## Three-model frozen-sample evaluation — 2026-10-03 (Europe/London)
 
 - Public aggregate results and byte-identical execution snapshots: [model diversity release](reproducibility/model_diversity_20261003/README_ZH.md). Raw source text, per-fact labels, model responses, account traces and credentials remain private.

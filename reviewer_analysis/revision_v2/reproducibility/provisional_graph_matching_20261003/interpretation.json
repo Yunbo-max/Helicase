@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-03T09:37:06.018703+00:00",
+  "reference_status": "provisional_ai_reviewed_not_author_confirmed_gold",
+  "descriptive_ranking": [
+    {
+      "method": "GLM",
+      "graph_f1": 0.22763982083451376
+    },
+    {
+      "method": "Claude",
+      "graph_f1": 0.2236674335738013
+    },
+    {
+      "method": "Helicase",
+      "graph_f1": 0.20972046107793835
+    },
+    {
+      "method": "DeepSeek",
+      "graph_f1": 0.19582180868154353
+    },
+    {
+      "method": "ReAct",
+      "graph_f1": 0.18766784690155236
+    },
+    {
+      "method": "Qwen3-235B",
+      "graph_f1": 0.18519085584571032
+    },
+    {
+      "method": "ToT",
+      "graph_f1": 0.17055149959081534
+    }
+  ],
+  "all_six_helicase_paired_difference_95ci_include_zero": true,
+  "conclusion": "This provisional matching does not establish a clear Helicase advantage over the six compared methods. These intervals condition on the fixed reference and matcher; no claim of exhaustive or independently verified gold."
+}

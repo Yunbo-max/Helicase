@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-03",
+  "timezone": "Europe/London",
+  "tests": {
+    "passed": 108,
+    "skipped": 1,
+    "seconds": 3.36,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p no:capture reviewer_analysis/revision_v2/tests reviewer_analysis/revision_v2/reproducibility",
+    "skip_reason": "Existing test requires unpublished private primary batch driver."
+  },
+  "csv_rows": 140,
+  "per_query_scores_independently_recomputed": true,
+  "summary_means_verified_against_csv": true,
+  "byte_identical_source_and_numeric_copies": 15,
+  "original_runtime_and_data_unchanged": true,
+  "new_model_calls_for_publication": 0
+}

@@ -1,0 +1,66 @@
+{
+  "source_layout": "reviewer_analysis/revision_v2/private",
+  "copy_policy": "Execution snapshots and selected numeric results are byte-identical. Raw graphs, prose references, per-pair maps, model traces, credentials and author forms remain local.",
+  "source_sha256": {
+    "reference_draft_v1/run_draft.py": {
+      "source_relative_path": "reference_draft_v1/run_draft.py",
+      "sha256": "2bcb9e19bc5761b81f39eb2e8a9147ed6ba58917aabcc33067c880487da7cafc"
+    },
+    "reference_draft_v1/finalize_drafts.py": {
+      "source_relative_path": "reference_draft_v1/finalize_drafts.py",
+      "sha256": "efc6ff2b5f4dd48efa5084582a3ddc62f19162d7f558d329caeecd4360b9a4d5"
+    },
+    "reference_draft_v1/test_draft.py": {
+      "source_relative_path": "reference_draft_v1/test_draft.py",
+      "sha256": "09021c236f4dd2aaf1cb46b2e256af7835b4582bb0b241eaae74810cdd092505"
+    },
+    "reference_draft_v1/test_review_packet.py": {
+      "source_relative_path": "reference_draft_v1/test_review_packet.py",
+      "sha256": "1e4038fbdd78e9c0f6842471265d55ac13f334111bb22dc562bde22db3696478"
+    },
+    "provisional_match_v1/analyse_v2.py": {
+      "source_relative_path": "provisional_match_v1/analyse_v2.py",
+      "sha256": "8364680dbe460c197045810868f8b594ea1840394a091dd3c0281979ae8f2c62"
+    },
+    "provisional_match_v1/continue_run.py": {
+      "source_relative_path": "provisional_match_v1/continue_run.py",
+      "sha256": "5d9c16e0cd908ced1bf869697a33871c1896cc4079b1f55e82f26595927741f7"
+    },
+    "provisional_match_v1/repair.py": {
+      "source_relative_path": "provisional_match_v1/repair.py",
+      "sha256": "16ea152628b14900f969627ee2c76ccab6ed272dc612009ee4aef17a1a8b1f2e"
+    },
+    "provisional_match_v1/test_repair.py": {
+      "source_relative_path": "provisional_match_v1/test_repair.py",
+      "sha256": "be69fc350c2b70c1f678ca9ae2f0aefc7aeedcddde684ac5786dea5eb6d1d80f"
+    },
+    "RESULTS_ZH.md": {
+      "source_relative_path": "provisional_match_v1/analysis_v1/RESULTS_ZH.md",
+      "sha256": "1c53a928cfa97231f7c72688635abd6dc91f1fde0ac9771ba2bb7d1fc6f2951c"
+    },
+    "summary.json": {
+      "source_relative_path": "provisional_match_v1/analysis_v1/summary.json",
+      "sha256": "54340739573f1ff853d26b44d5b39bd46ef363321e7ec52d6c5f36306a9ff8a5"
+    },
+    "audit.json": {
+      "source_relative_path": "provisional_match_v1/analysis_v1/audit.json",
+      "sha256": "bfdefdb7606776f8d5133733c12bb65d9786ba5f49699e659ac355d1e1dda95a"
+    },
+    "per_query_scores.csv": {
+      "source_relative_path": "provisional_match_v1/analysis_v1/per_query_scores.csv",
+      "sha256": "739b129095f7877a51af2087dc8c924030100c796a753955cd64fe6eb44b718d"
+    },
+    "reference_draft_audit.json": {
+      "source_relative_path": "reference_draft_v1/review_packet_v1/audit.json",
+      "sha256": "8ebcbdaa268bcb3f8eb26061ea6c5724f3dde955f0e94ed8cd218e6d512ae82f"
+    },
+    "interpretation.json": {
+      "source_relative_path": "provisional_match_v1/interpretation.json",
+      "sha256": "c2bc4c3d3ae810b98b3e32936288aaa67428804fc208bf6da4b6fc64511df273"
+    },
+    "private_software_verification.json": {
+      "source_relative_path": "provisional_match_v1/software_verification.json",
+      "sha256": "90ff9de1c0be9ea859af740088b90432c3c99a22a04fdc427aa4eeea36a5a9e3"
+    }
+  }
+}

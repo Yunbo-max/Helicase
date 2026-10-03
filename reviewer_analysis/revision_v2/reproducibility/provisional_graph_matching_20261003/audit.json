@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-03T09:35:22.204285+00:00",
+  "status": "provisional_matching_complete_not_author_confirmed_gold",
+  "results": 140,
+  "primary_cli_calls": 140,
+  "primary_validation_failures": 4,
+  "repair_cli_calls": 4,
+  "repairs_by_method": {
+    "DeepSeek": 2,
+    "Helicase": 1,
+    "Qwen3-235B": 1
+  },
+  "completed_cli_calls": 144,
+  "usage": {
+    "input_tokens": 1788279,
+    "cached_input_tokens": 954368,
+    "output_tokens": 81294,
+    "reasoning_output_tokens": 72016
+  },
+  "sum_call_elapsed_seconds": 1934.616758662858,
+  "all_pairs_and_scores_recomputed": true,
+  "all_prompts_and_transcripts_verified": true,
+  "protected_inputs_unchanged": true,
+  "author_confirmed_reference": false,
+  "model_snapshot_attested": false,
+  "new_reference_extractions": 0,
+  "new_prediction_extractions": 0,
+  "new_page_fetches": 0
+}

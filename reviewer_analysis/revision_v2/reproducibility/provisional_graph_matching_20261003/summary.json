@@ -1,0 +1,754 @@
+{
+  "status": "provisional_ai_reviewed_reference",
+  "n_boot": 2000,
+  "seed": 20261003,
+  "estimand": "Macro mean over20archived Q4 queries per method; Graph F1=0.6 entity F1+0.4 relation F1.",
+  "ci_limit": "Query resampling conditional on one fixed reference and matcher; excludes annotation/model uncertainty.",
+  "groups": [
+    {
+      "method": "Claude",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.3286448766891513,
+        "relation_f1": 0.0662012689007763,
+        "graph_f1": 0.2236674335738013
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.2849550633062822,
+          0.3768789441441503
+        ],
+        "relation_f1": [
+          0.03263191414496833,
+          0.10713429769464254
+        ],
+        "graph_f1": [
+          0.18833405537476375,
+          0.2650804319732813
+        ]
+      }
+    },
+    {
+      "method": "DeepSeek",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.29762556288971304,
+        "relation_f1": 0.04311617736928922,
+        "graph_f1": 0.19582180868154353
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.24061387375918628,
+          0.3559936715181621
+        ],
+        "relation_f1": [
+          0.02043209424822606,
+          0.07098160997618763
+        ],
+        "graph_f1": [
+          0.15753664102059853,
+          0.23476870762598434
+        ]
+      }
+    },
+    {
+      "method": "GLM",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.34358293154683295,
+        "relation_f1": 0.053725154766034955,
+        "graph_f1": 0.22763982083451376
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.2912697545645989,
+          0.39463574667686485
+        ],
+        "relation_f1": [
+          0.03569945057513848,
+          0.07116049294707451
+        ],
+        "graph_f1": [
+          0.19413978869313386,
+          0.2608948895073257
+        ]
+      }
+    },
+    {
+      "method": "Helicase",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.3071799707504842,
+        "relation_f1": 0.06353119656911962,
+        "graph_f1": 0.20972046107793835
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.25112145603479685,
+          0.36285142653897207
+        ],
+        "relation_f1": [
+          0.03379391141720399,
+          0.09561221332682902
+        ],
+        "graph_f1": [
+          0.16708771567832323,
+          0.25361610499062875
+        ]
+      }
+    },
+    {
+      "method": "Qwen3-235B",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.2894682143986437,
+        "relation_f1": 0.0287748180163103,
+        "graph_f1": 0.18519085584571032
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.23932083016509076,
+          0.3425926780777539
+        ],
+        "relation_f1": [
+          0.012430694893381462,
+          0.04795403114655152
+        ],
+        "graph_f1": [
+          0.15177917114159784,
+          0.22011993152618592
+        ]
+      }
+    },
+    {
+      "method": "ReAct",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.2794176268096413,
+        "relation_f1": 0.050043177039419,
+        "graph_f1": 0.18766784690155236
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.24088429114350166,
+          0.3144544657970248
+        ],
+        "relation_f1": [
+          0.028676605748886207,
+          0.07142521514660834
+        ],
+        "graph_f1": [
+          0.15984572632972965,
+          0.2130431318439425
+        ]
+      }
+    },
+    {
+      "method": "ToT",
+      "n_queries": 20,
+      "macro_means": {
+        "entity_f1": 0.2634986611258572,
+        "relation_f1": 0.031130757288252542,
+        "graph_f1": 0.17055149959081534
+      },
+      "query_bootstrap_95ci": {
+        "entity_f1": [
+          0.20752668521236678,
+          0.3251805053966344
+        ],
+        "relation_f1": [
+          0.013399836840894715,
+          0.05148826979472141
+        ],
+        "graph_f1": [
+          0.1330664079485246,
+          0.21019409219058652
+        ]
+      }
+    }
+  ],
+  "exploratory_paired_comparisons": [
+    {
+      "method_a": "Helicase",
+      "method_b": "Claude",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": -0.013946972495862945,
+      "query_bootstrap_95ci": [
+        -0.0634818879988263,
+        0.0344381054924374
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "Claude": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "Claude": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    },
+    {
+      "method_a": "Helicase",
+      "method_b": "DeepSeek",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": 0.013898652396394817,
+      "query_bootstrap_95ci": [
+        -0.03807954738137155,
+        0.07033327829836529
+      ],
+      "wins": 10,
+      "ties": 1,
+      "losses": 9,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "DeepSeek": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    },
+    {
+      "method_a": "Helicase",
+      "method_b": "GLM",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": -0.017919359756575427,
+      "query_bootstrap_95ci": [
+        -0.06682238625955628,
+        0.03452140260562868
+      ],
+      "wins": 8,
+      "ties": 0,
+      "losses": 12,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "GLM": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "GLM": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    },
+    {
+      "method_a": "Helicase",
+      "method_b": "Qwen3-235B",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": 0.024529605232228024,
+      "query_bootstrap_95ci": [
+        -0.027524029670991105,
+        0.08646014467685978
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "Qwen3-235B": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    },
+    {
+      "method_a": "Helicase",
+      "method_b": "ReAct",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": 0.02205261417638597,
+      "query_bootstrap_95ci": [
+        -0.009837986142839969,
+        0.058123374487942456
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "ReAct": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "ReAct": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    },
+    {
+      "method_a": "Helicase",
+      "method_b": "ToT",
+      "metric": "graph_f1",
+      "n_queries": 20,
+      "mean_difference": 0.03916896148712303,
+      "query_bootstrap_95ci": [
+        -0.016009571900072905,
+        0.09623700842969292
+      ],
+      "wins": 13,
+      "ties": 0,
+      "losses": 7,
+      "runs_per_query": {
+        "Q61": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q62": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q63": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q64": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q65": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q66": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q67": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q68": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q69": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q70": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q71": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q72": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q73": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q74": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q75": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q76": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q77": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q78": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q79": {
+          "Helicase": 1,
+          "ToT": 1
+        },
+        "Q80": {
+          "Helicase": 1,
+          "ToT": 1
+        }
+      },
+      "estimand": "Mean of query-level differences after averaging available runs per method; not a matched-budget causal effect."
+    }
+  ]
+}

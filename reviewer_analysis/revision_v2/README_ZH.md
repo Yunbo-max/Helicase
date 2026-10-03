@@ -1,5 +1,8 @@
 # Helicase / IJPR 268226721：只做剩余任务
 
+最新暂定结果（2026-10-03）：[140份Q4参考图匹配与Graph F1](reproducibility/provisional_graph_matching_20261003/README_ZH.md)。已完成7系统×20题；参考由AI从原文字转换，尚未经作者完整性确认，不能当作正式gold结论。
+
+
 **先读本页，不要再从完整指南的 `prepare` 开始重跑。保留原 SCQA、原 reference、已完成输出和 Helicase 核心算法。**
 
 [完整命令手册（保留原版）](README_FULL_ZH.md) · [本次已报告的运行记录](VALIDATION.md) · [实验协议](EXPERIMENT_PROTOCOL.md)

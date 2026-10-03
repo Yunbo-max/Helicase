@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-03T08:52:30.887929+00:00",
+  "status": "draft_preparation_complete_author_confirmation_pending",
+  "drafts": 20,
+  "nodes": 435,
+  "edges": 496,
+  "completed_cli_calls": 20,
+  "usage": {
+    "input_tokens": 158363,
+    "cached_input_tokens": 116224,
+    "output_tokens": 47856,
+    "reasoning_output_tokens": 8958
+  },
+  "original_input_and_prediction_hashes_unchanged": true,
+  "author_confirmed": 0,
+  "formal_match_calls": 0,
+  "graph_f1": null,
+  "offline_corrections": 148,
+  "offline_builder_sha256": "efc6ff2b5f4dd48efa5084582a3ddc62f19162d7f558d329caeecd4360b9a4d5",
+  "extraction_manifest_sha256": "bb9e93fcbc6dd6121b051f4b3b808c09fc19cc1bdfd750dbe3e14b1c9dca3d42"
+}
