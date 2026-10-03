@@ -1,5 +1,7 @@
 # Helicase revision tools v2 — continue from the completed evaluation
 
+**Metric clarification (2026-10-03):** [Historical Q4 formula and source snapshot](OLD_Q4_METRIC_ZH.md). Historical Q4 scores combine concise-answer semantic matching with a native-graph-density relation proxy. The newer full-report graph-matching scores measure a different object and are not directly comparable. Provisional matching is complete; pause new model calls and full agent reruns while auditing alignment offline.
+
 **Start here: [只做剩余任务 / Remaining tasks](README_ZH.md).**
 
 [Full command reference, preserved](README_FULL_ZH.md) · [Recorded validation](VALIDATION.md) · [Evaluation protocol](EXPERIMENT_PROTOCOL.md)
@@ -12,13 +14,13 @@ The validation record at commit `83d7f07` reports 140 completed common-report ex
 
 | Task | Inputs | New model work |
 |---|---|---|
-| Q4 matching and paired statistics | Existing 140 extracted graphs + author-confirmed original reference graphs | Up to 140 matching tasks; no new extraction or agent execution |
-| Unresolved-label diagnostics | Final primary labels, item payloads and cached pages | None; an offline example is in the remaining-task guide |
-| Bounded alternative-judge check | Frozen sample and exactly the same evidence payloads | Suggested cap: 200 sampled facts, after a two-item interface check |
+| Offline alignment audit | Original prose, converted reference, extracted reports and actual match pairs | None; provisional matching is already complete (140/140) |
+| Scope and representation review | The same 20 queries and seven methods | None; resolve time/market, background facts, granularity and assertion status first |
+| Unresolved diagnostics / alternative judges | Completed diagnostics and frozen-sample three-model results | Already completed; do not repeat unchanged inputs |
 | Human audit / reference documentation | Existing blank forms and author records | Not replaceable by API calls |
-| Agent repeats / matched-budget controls | Existing configurations and raw records first | Still unresolved; not automatically launched by this guide |
+| Agent repeats / matched-budget controls | Existing configurations and raw records first | Still unresolved; paused, not automatically launched |
 
-The Chinese guide gives commands for existing `match`, `paired`, `judge` and `analyse` entry points, completion criteria, and explicit local preparation requirements. Secondary sampling and cross-model agreement preparation are requirements, **not new CLI subcommands**. Do not treat `analyse` as an automatic inter-judge agreement calculation.
+The Chinese guide gives commands for existing `match`, `paired`, `judge` and `analyse` entry points, completion criteria, and explicit local preparation requirements. The command examples are historical instructions, not authorization to rerun completed tasks. Secondary sampling and cross-model agreement preparation are **not new CLI subcommands**. Do not treat `analyse` as an automatic inter-judge agreement calculation.
 
 ```bash
 git pull --ff-only origin main

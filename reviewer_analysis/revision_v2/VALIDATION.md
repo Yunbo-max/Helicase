@@ -1,5 +1,13 @@
 # Validation record — software, not new paper experiments
 
+## Historical metric clarification and offline audit — 2026-10-03 (Europe/London)
+
+- [Explanation and source snapshot](OLD_Q4_METRIC_ZH.md): the recovered local `benchmark/eval_scpqa.py` measures concise-answer semantic matching plus a native-graph-density relation proxy. It does not match reference relations. Its relation formulas agree with all 140 archived Q4 records within rounding tolerance; the exact historical source commit and judge outputs remain unestablished.
+- Independently recomputed all 140 provisional graph scores and checked one-to-one directed mappings. Arithmetic validity does not establish semantic correctness. Offline review found extraction/representation defects and suspected missed semantic matches; these remain separate from genuine answer differences.
+- Historical Q73 includes out-of-range metrics; the stored Helicase Q68 report has no substantive answer despite its old 0.940 score. These limitations are retained alongside the new metric's scope and representation limitations. Neither historical nor provisional ranking is presumed correct.
+- This update publishes documentation and a byte-identical inspection snapshot only. Existing result artifacts and evaluation implementations are unchanged. No new model, retrieval or agent run was launched; detailed reports, graphs and match pairs remain private.
+
+
 ## Provisional Q4 graph matching — 2026-10-03 (Europe/London)
 
 - [Public report, numeric results and execution snapshots](reproducibility/provisional_graph_matching_20261003/README_ZH.md): 140/140 results, seven methods × 20 queries. These use AI-reviewed prose-reference drafts, **not author-confirmed complete gold**.

@@ -1,0 +1,15 @@
+{
+  "source_path": "benchmark/eval_scpqa.py (local original checkout)",
+  "sha256": "0d39bb5935a8e541b94d71de90d8862ac60095e9743b1a093f7e0da5dbca9403",
+  "snapshot_date": "2026-10-03",
+  "timezone": "Europe/London",
+  "byte_identical": true,
+  "historical_commit": "not established",
+  "archive_formula_consistency": {
+    "q4_records": 140,
+    "consistent_records": 140,
+    "absolute_tolerance": 0.0011,
+    "note": "Relation precision, recall and F1 agree with local code within rounding tolerance; does not attest exact historical source commit or judge outputs."
+  },
+  "execution": "Inspection snapshot only. Runtime imports, environment and relative paths require the original project layout. Do not execute to repeat completed evaluations."
+}
