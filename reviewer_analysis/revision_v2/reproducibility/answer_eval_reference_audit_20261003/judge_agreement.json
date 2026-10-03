@@ -1,0 +1,999 @@
+{
+  "models": [
+    "gpt-5.5",
+    "gpt-5.6-sol"
+  ],
+  "prediction_units": 517,
+  "binary_match_status_agreement": 0.9477756286266924,
+  "cohen_kappa": 0.8905974465683852,
+  "confusion": {
+    "(1, 1)": 189,
+    "(0, 0)": 301,
+    "(1, 0)": 24,
+    "(0, 1)": 3
+  },
+  "disagreement_rows": 27,
+  "query_method_score_differences": [
+    {
+      "query_id": "Q80",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.6153846153846154,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.6153846153846154
+    },
+    {
+      "query_id": "Q69",
+      "method": "Claude",
+      "gpt55_f1": 0.5,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.5
+    },
+    {
+      "query_id": "Q76",
+      "method": "GLM",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.16666666666666666,
+      "absolute_difference": 0.5
+    },
+    {
+      "query_id": "Q76",
+      "method": "Claude",
+      "gpt55_f1": 0.6,
+      "gpt56sol_f1": 0.2,
+      "absolute_difference": 0.39999999999999997
+    },
+    {
+      "query_id": "Q76",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.5,
+      "gpt56sol_f1": 0.125,
+      "absolute_difference": 0.375
+    },
+    {
+      "query_id": "Q76",
+      "method": "ToT",
+      "gpt55_f1": 0.2857142857142857,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.2857142857142857
+    },
+    {
+      "query_id": "Q76",
+      "method": "Helicase",
+      "gpt55_f1": 0.35294117647058826,
+      "gpt56sol_f1": 0.11764705882352941,
+      "absolute_difference": 0.23529411764705885
+    },
+    {
+      "query_id": "Q62",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.7272727272727273,
+      "gpt56sol_f1": 0.5454545454545454,
+      "absolute_difference": 0.18181818181818188
+    },
+    {
+      "query_id": "Q80",
+      "method": "Helicase",
+      "gpt55_f1": 0.4444444444444444,
+      "gpt56sol_f1": 0.3333333333333333,
+      "absolute_difference": 0.1111111111111111
+    },
+    {
+      "query_id": "Q68",
+      "method": "GLM",
+      "gpt55_f1": 0.43478260869565216,
+      "gpt56sol_f1": 0.34782608695652173,
+      "absolute_difference": 0.08695652173913043
+    },
+    {
+      "query_id": "Q61",
+      "method": "Claude",
+      "gpt55_f1": 0.2,
+      "gpt56sol_f1": 0.2,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "GLM",
+      "gpt55_f1": 0.11764705882352941,
+      "gpt56sol_f1": 0.11764705882352941,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "Helicase",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "ReAct",
+      "gpt55_f1": 0.2,
+      "gpt56sol_f1": 0.2,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q61",
+      "method": "ToT",
+      "gpt55_f1": 0.3333333333333333,
+      "gpt56sol_f1": 0.3333333333333333,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "Claude",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.375,
+      "gpt56sol_f1": 0.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "GLM",
+      "gpt55_f1": 0.5333333333333333,
+      "gpt56sol_f1": 0.5333333333333333,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "ReAct",
+      "gpt55_f1": 0.25,
+      "gpt56sol_f1": 0.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q62",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "Claude",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "GLM",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q63",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "Claude",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.36363636363636365,
+      "gpt56sol_f1": 0.36363636363636365,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "GLM",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "Helicase",
+      "gpt55_f1": 0.5454545454545454,
+      "gpt56sol_f1": 0.5454545454545454,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.16666666666666666,
+      "gpt56sol_f1": 0.16666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "ReAct",
+      "gpt55_f1": 0.5454545454545454,
+      "gpt56sol_f1": 0.5454545454545454,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q64",
+      "method": "ToT",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "Claude",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "GLM",
+      "gpt55_f1": 0.6842105263157895,
+      "gpt56sol_f1": 0.6842105263157895,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q65",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "Claude",
+      "gpt55_f1": 0.5333333333333333,
+      "gpt56sol_f1": 0.5333333333333333,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.16666666666666666,
+      "gpt56sol_f1": 0.16666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "GLM",
+      "gpt55_f1": 0.46153846153846156,
+      "gpt56sol_f1": 0.46153846153846156,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "Helicase",
+      "gpt55_f1": 0.8235294117647058,
+      "gpt56sol_f1": 0.8235294117647058,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q66",
+      "method": "ToT",
+      "gpt55_f1": 0.46153846153846156,
+      "gpt56sol_f1": 0.46153846153846156,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "Claude",
+      "gpt55_f1": 0.18181818181818182,
+      "gpt56sol_f1": 0.18181818181818182,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "GLM",
+      "gpt55_f1": 0.2222222222222222,
+      "gpt56sol_f1": 0.2222222222222222,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "Helicase",
+      "gpt55_f1": 0.18181818181818182,
+      "gpt56sol_f1": 0.18181818181818182,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q67",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "Claude",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.3333333333333333,
+      "gpt56sol_f1": 0.3333333333333333,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "ReAct",
+      "gpt55_f1": 0.16666666666666666,
+      "gpt56sol_f1": 0.16666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q68",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.5714285714285714,
+      "gpt56sol_f1": 0.5714285714285714,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "GLM",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "ReAct",
+      "gpt55_f1": 0.5454545454545454,
+      "gpt56sol_f1": 0.5454545454545454,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q69",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "Claude",
+      "gpt55_f1": 0.14285714285714285,
+      "gpt56sol_f1": 0.14285714285714285,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.38095238095238093,
+      "gpt56sol_f1": 0.38095238095238093,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "GLM",
+      "gpt55_f1": 0.631578947368421,
+      "gpt56sol_f1": 0.631578947368421,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "Helicase",
+      "gpt55_f1": 0.14285714285714285,
+      "gpt56sol_f1": 0.14285714285714285,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.5,
+      "gpt56sol_f1": 0.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q70",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "Claude",
+      "gpt55_f1": 0.5714285714285714,
+      "gpt56sol_f1": 0.5714285714285714,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "GLM",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "Helicase",
+      "gpt55_f1": 0.5714285714285714,
+      "gpt56sol_f1": 0.5714285714285714,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q71",
+      "method": "ToT",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "Claude",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "GLM",
+      "gpt55_f1": 0.6,
+      "gpt56sol_f1": 0.6,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q72",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "Claude",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.2222222222222222,
+      "gpt56sol_f1": 0.2222222222222222,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "GLM",
+      "gpt55_f1": 0.18181818181818182,
+      "gpt56sol_f1": 0.18181818181818182,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q73",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "Claude",
+      "gpt55_f1": 0.8571428571428571,
+      "gpt56sol_f1": 0.8571428571428571,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "GLM",
+      "gpt55_f1": 0.8888888888888888,
+      "gpt56sol_f1": 0.8888888888888888,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "Helicase",
+      "gpt55_f1": 0.75,
+      "gpt56sol_f1": 0.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "ReAct",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q74",
+      "method": "ToT",
+      "gpt55_f1": 0.5714285714285714,
+      "gpt56sol_f1": 0.5714285714285714,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "Claude",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "GLM",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "Helicase",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "ReAct",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q75",
+      "method": "ToT",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q76",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.18181818181818182,
+      "gpt56sol_f1": 0.18181818181818182,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q76",
+      "method": "ReAct",
+      "gpt55_f1": 0.25,
+      "gpt56sol_f1": 0.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "Claude",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.5,
+      "gpt56sol_f1": 0.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "GLM",
+      "gpt55_f1": 0.75,
+      "gpt56sol_f1": 0.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "Helicase",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.3333333333333333,
+      "gpt56sol_f1": 0.3333333333333333,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "ReAct",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q77",
+      "method": "ToT",
+      "gpt55_f1": 0.4,
+      "gpt56sol_f1": 0.4,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "Claude",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "GLM",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "Helicase",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "ReAct",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q78",
+      "method": "ToT",
+      "gpt55_f1": 1.0,
+      "gpt56sol_f1": 1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "Claude",
+      "gpt55_f1": 0.8,
+      "gpt56sol_f1": 0.8,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.3076923076923077,
+      "gpt56sol_f1": 0.3076923076923077,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "GLM",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "Helicase",
+      "gpt55_f1": 0.47058823529411764,
+      "gpt56sol_f1": 0.47058823529411764,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "Qwen3-235B",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q79",
+      "method": "ToT",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q80",
+      "method": "Claude",
+      "gpt55_f1": 0.42857142857142855,
+      "gpt56sol_f1": 0.42857142857142855,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q80",
+      "method": "DeepSeek",
+      "gpt55_f1": 0.6666666666666666,
+      "gpt56sol_f1": 0.6666666666666666,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q80",
+      "method": "GLM",
+      "gpt55_f1": 0.5714285714285714,
+      "gpt56sol_f1": 0.5714285714285714,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q80",
+      "method": "ReAct",
+      "gpt55_f1": 0.0,
+      "gpt56sol_f1": 0.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "query_id": "Q80",
+      "method": "ToT",
+      "gpt55_f1": 0.18181818181818182,
+      "gpt56sol_f1": 0.18181818181818182,
+      "absolute_difference": 0.0
+    }
+  ],
+  "interpretation": "Agreement of two matching judges on the same fixed extraction; not agreement with human truth or independent extraction replication."
+}

@@ -1,0 +1,13 @@
+{
+  "protected_historical_files": 22,
+  "unchanged": true,
+  "reports": 140,
+  "frozen_groups": 140,
+  "frozen_answer_units": 517,
+  "reference_present_in_extraction_or_normalization_payload": false,
+  "all_final_quotes_exact": true,
+  "all_final_units_have_own_source_lineage": true,
+  "frozen_groups_sha256": "c2152e020377db9d29786f69de052bbbfdb3a2fef1e6dc7957bdd302ed74cc7b",
+  "match_tasks_sha256": "03db0006105fbeed0b45875c6667738fc35ba84ecba7fe9f081eae7e5e617dd9",
+  "semantic_validity_proven": false
+}

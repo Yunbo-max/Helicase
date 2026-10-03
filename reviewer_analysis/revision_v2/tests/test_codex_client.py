@@ -47,6 +47,17 @@ def test_exact_model_and_private_prompt_trace(tmp_path):
     assert client.public_config['hard_token_cap'] is None
 
 
+@pytest.mark.parametrize('judge', ['gpt-6-sol', 'gpt-6-astra', 'gpt-5.6-sol', 'gpt-5.6-terra'])
+def test_explicit_judge_is_sent_and_recorded_without_environment_mutation(tmp_path, judge):
+    from reviewer_analysis.revision_v2.codex_client import CodexClient
+    executable = fake_cli(tmp_path)
+    client = CodexClient(tmp_path/'calls', executable=executable, model=judge)
+    client.chat('Closed book', {})
+    request = json.loads(Path(executable[1]).with_suffix('.request.json').read_text())
+    assert request['args'][request['args'].index('--model')+1] == judge
+    assert client.public_config['requested_model'] == judge
+
+
 @pytest.mark.parametrize('mode', ['tool', 'no_usage', 'failed'])
 def test_incomplete_or_tool_using_runs_rejected_and_retained(tmp_path, mode):
     from reviewer_analysis.revision_v2.codex_client import CodexClient
@@ -103,3 +114,15 @@ def test_invalid_extraction_preserves_raw_response_and_is_not_rerun(tmp_path, mo
     assert item['usage']['input_tokens'] == 12
     assert item['error_kind'] == 'content_validation'
     assert read_jsonl(tmp_path/'results.jsonl') == []
+
+
+def test_legacy_text_transport_preserves_prompt_without_json_object_override(tmp_path):
+    from reviewer_analysis.revision_v2.codex_client import CodexClient
+    executable = fake_cli(tmp_path)
+    client = CodexClient(tmp_path/'calls', executable=executable)
+    original='Given this research report, extract the DIRECT ANSWER.\nREPORT:\nExample.\nANSWER:'
+    client.chat_legacy(original)
+    request=json.loads(Path(executable[1]).with_suffix('.request.json').read_text())
+    assert request['prompt'].endswith(original)
+    assert 'Only return the requested JSON object' not in request['prompt']
+    assert 'Do not use tools' in request['prompt']

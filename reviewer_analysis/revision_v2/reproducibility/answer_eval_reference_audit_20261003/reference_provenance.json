@@ -1,0 +1,173 @@
+{
+  "versions": {
+    "scpqa.jsonl": {
+      "path": "benchmark/scpqa.jsonl",
+      "sha256": "a1fb45816d691ea6d412aa3a249b9291685604628c35cffb7d825b2a91ee7f73",
+      "n_records": 80
+    },
+    "scpqa_original.jsonl": {
+      "path": "benchmark/scpqa_original.jsonl",
+      "sha256": "12e16a14cdff45452f494ba02319136fd9a19e72d17da8965d05593fa963054e",
+      "n_records": 80
+    },
+    "gt_q4.jsonl": {
+      "path": "benchmark/gt_q4.jsonl",
+      "sha256": "92d14d8febb49827e50b051094e88327f555abf1829ffd1232c2a8c7b2ffa090",
+      "n_records": 20
+    }
+  },
+  "historical_evidence": [
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_deepseek_v3.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_glm5.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_claude_opus.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_tot.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_qwen3_235b.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_report.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa.jsonl",
+      "historical_eval": "eval_react.json",
+      "saved_Q1_Q3_exact_matches": 60,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 20
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_deepseek_v3.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 8
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_glm5.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 12
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_claude_opus.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 6
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_tot.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 10
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_qwen3_235b.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 7
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_report.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 13
+    },
+    {
+      "reference": "scpqa_original.jsonl",
+      "historical_eval": "eval_react.json",
+      "saved_Q1_Q3_exact_matches": 1,
+      "saved_Q1_Q3_compared": 60,
+      "Q4_recall_denominator_compatible": 9
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_deepseek_v3.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 8
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_glm5.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 10
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_claude_opus.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 8
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_tot.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 9
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_qwen3_235b.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 8
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_report.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 13
+    },
+    {
+      "reference": "gt_q4.jsonl",
+      "historical_eval": "eval_react.json",
+      "saved_Q1_Q3_exact_matches": 0,
+      "saved_Q1_Q3_compared": 0,
+      "Q4_recall_denominator_compatible": 7
+    }
+  ],
+  "Q4_all_three_versions_differ": true,
+  "historically_supported_version": "scpqa.jsonl",
+  "certainty": "Strong indirect evidence: historical Q4 prompt/reference file hash was not saved, so exact identity is not cryptographically attested.",
+  "authoritative_publication_version": "pending author confirmation",
+  "source_independence": "not independently established for any version"
+}

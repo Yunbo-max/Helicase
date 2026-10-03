@@ -1,0 +1,35 @@
+{
+  "definition": "Both judges match for one method and neither matches for the other; after explicit protocol corrections. Not factual verification.",
+  "summary": [
+    {
+      "baseline": "Claude",
+      "Helicase_stable_only": 6,
+      "baseline_stable_only": 5
+    },
+    {
+      "baseline": "DeepSeek",
+      "Helicase_stable_only": 19,
+      "baseline_stable_only": 21
+    },
+    {
+      "baseline": "GLM",
+      "Helicase_stable_only": 18,
+      "baseline_stable_only": 53
+    },
+    {
+      "baseline": "Qwen3-235B",
+      "Helicase_stable_only": 24,
+      "baseline_stable_only": 8
+    },
+    {
+      "baseline": "ReAct",
+      "Helicase_stable_only": 23,
+      "baseline_stable_only": 8
+    },
+    {
+      "baseline": "ToT",
+      "Helicase_stable_only": 15,
+      "baseline_stable_only": 2
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "model": "gpt-5.5",
+    "query_id": "Q69",
+    "correction": "Fix Marc Jacobs/Kenzo ID attribution to agree with the actual claim and the saved Judge reason. Counts unchanged.",
+    "before_sha256": "c5a6a7c048f0baa8cd6e893ed9a0a95da35996c3489d9a122bc74968cae07b53",
+    "after_sha256": "d71289e1f4b3c88f52dd3aec879cc6a67abaa3ae2603a349c69e369c5ec49e3c"
+  },
+  {
+    "model": "gpt-5.5",
+    "query_id": "Q80",
+    "correction": "Reject the planned-versus-actual mismatch under the pre-existing rule; fixed answers and denominators unchanged.",
+    "before_sha256": "930803ce35f4354250ead776ade0b15d270637366ba194f22627446f534af7c3",
+    "after_sha256": "45e8d5b539fa5125d40ebc3d43d5507e1b02d385e26218b14fea7f115c0d5a27",
+    "removed_candidates": [
+      {
+        "predicted_id": "p_fee22a3053425310a0f54d64",
+        "reference_id": "r02",
+        "reason": "Meteor Lake successors match the reference Core Ultra target's Meteor Lake and later generations; planned production is compatible with the reference disjunction of later generations."
+      }
+    ]
+  }
+]

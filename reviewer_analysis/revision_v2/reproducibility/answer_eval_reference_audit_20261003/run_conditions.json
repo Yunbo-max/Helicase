@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-03",
+  "methods": 7,
+  "queries": [
+    "Q61",
+    "Q62",
+    "Q63",
+    "Q64",
+    "Q65",
+    "Q66",
+    "Q67",
+    "Q68",
+    "Q69",
+    "Q70",
+    "Q71",
+    "Q72",
+    "Q73",
+    "Q74",
+    "Q75",
+    "Q76",
+    "Q77",
+    "Q78",
+    "Q79",
+    "Q80"
+  ],
+  "generation_runs_per_method": 1,
+  "new_judges": [
+    "gpt-5.5",
+    "gpt-5.6-sol"
+  ],
+  "legacy_judge": "gpt-5.5",
+  "backend": "codex-cli 0.144.1; closed-book; tools disabled",
+  "reasoning_effort": "medium",
+  "server_model_snapshot_attested": false,
+  "legacy_temperature": "Original requests 0; Codex CLI actual sampling temperature not exposed",
+  "same_140_legacy_extractions_across_reference_versions": true,
+  "source_hashes": {
+    "codex_client.py": "6a5b90c3acf5372cfbc23e535962db465e468bd0083f30cfae2c0ce8ed7634f5",
+    "answer_units.py": "d3b6b5b4c79804144fae9d1c98185c9fcc109c4a42bf191d7ad3a6a8314fce14",
+    "answer_batch.py": "6a9cc4afbfc4550a63aac4863eccdd0232c395f0eb0174ed4f6dc35106e8a174",
+    "answer_statistics.py": "c64df9eefbfd30b30e8d28d6d2ed42336d59fd572463b89d4141e18fbbcbbc90",
+    "answer_blind.py": "9c44e0d23607fb60733a42cb52866c40d9e827fc4bfd84559950a120e9b48190",
+    "legacy_replay.py": "52a4de0b18b2d3c5764d8f3a038ae990c5ddac600c4018c25d405e9643e88edf"
+  },
+  "missing_public_artifacts": [
+    "original reports",
+    "original prose references",
+    "full raw prompts/model replies/match pairs",
+    "private orchestration caches"
+  ],
+  "remaining": [
+    "authoritative reference version confirmation",
+    "independent source/annotation validation",
+    "new protocol on confirmed historical reference version",
+    "cross-method citation support"
+  ],
+  "not_run": [
+    "search agents",
+    "240 independent reruns"
+  ]
+}

@@ -1,3 +1,5 @@
+> **2026-10-03 result update:** The new answer evaluation and historical-code replay have completed on explicitly distinguished reference versions. Saved historical references strongly support `scpqa.jsonl`; the new protocol used the different `gt_q4.jsonl`. The legacy replay with GPT-5.5 on scpqa gives Helicase 0.5600 answer-fragment F1 and 0.5484 composite, but the paired difference from Claude includes zero and the historical 0.86745 has not been recovered. Do not describe cross-reference score differences as a change in method quality. Reference authority and independent provenance remain unconfirmed. See the [audited result package](reproducibility/answer_eval_reference_audit_20261003/README_ZH.md); the manuscript and online response have not been edited.
+
 # Evaluation positioning and reviewer responses — working text
 
 Manuscript ID: 268226721. Version `complementary-evaluation-v1`.

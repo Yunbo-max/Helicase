@@ -1,0 +1,28 @@
+{
+  "cli_invocations": 532,
+  "counts": [
+    {
+      "model": "gpt-5.5",
+      "synthetic_qualification_only": false,
+      "count": 508
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "synthetic_qualification_only": false,
+      "count": 22
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "synthetic_qualification_only": true,
+      "count": 1
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "synthetic_qualification_only": true,
+      "count": 1
+    }
+  ],
+  "input_tokens": 4720969,
+  "output_tokens": 286000,
+  "billing_cost": "not exposed; token usage is CLI accounting, not invoice"
+}

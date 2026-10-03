@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "method": "Helicase",
+      "historical_unverified_answer_f1": 0.86745,
+      "historical_unverified_composite": 0.85285,
+      "legacy_gpt55_scpqa_P": 0.7014880952380953,
+      "legacy_gpt55_scpqa_R": 0.5086904761904761,
+      "legacy_gpt55_scpqa_F1": 0.5600199800199801,
+      "legacy_gpt55_scpqa_composite": 0.5483906656820998,
+      "legacy_gpt55_gt_q4_F1": 0.2181977643934166,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.29271517697988286
+    },
+    {
+      "method": "Claude",
+      "historical_unverified_answer_f1": 0.67255,
+      "historical_unverified_composite": 0.6323,
+      "legacy_gpt55_scpqa_P": 0.7466666666666667,
+      "legacy_gpt55_scpqa_R": 0.44708333333333333,
+      "legacy_gpt55_scpqa_F1": 0.5218652589240825,
+      "legacy_gpt55_scpqa_composite": 0.4905533433886375,
+      "legacy_gpt55_gt_q4_F1": 0.2540269452769453,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.39159090909090916
+    },
+    {
+      "method": "DeepSeek",
+      "historical_unverified_answer_f1": 0.2899,
+      "historical_unverified_composite": 0.2726,
+      "legacy_gpt55_scpqa_P": 0.3231818181818181,
+      "legacy_gpt55_scpqa_R": 0.21583333333333338,
+      "legacy_gpt55_scpqa_F1": 0.22089684217591196,
+      "legacy_gpt55_scpqa_composite": 0.2076430316453572,
+      "legacy_gpt55_gt_q4_F1": 0.23950623123191508,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.2766715922965923
+    },
+    {
+      "method": "GLM",
+      "historical_unverified_answer_f1": 0.35305000000000003,
+      "historical_unverified_composite": 0.3319,
+      "legacy_gpt55_scpqa_P": 0.2077020202020202,
+      "legacy_gpt55_scpqa_R": 0.22863095238095235,
+      "legacy_gpt55_scpqa_F1": 0.19788742690058478,
+      "legacy_gpt55_scpqa_composite": 0.18601418128654973,
+      "legacy_gpt55_gt_q4_F1": 0.32118328119704737,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.4591985269781743
+    },
+    {
+      "method": "Qwen3-235B",
+      "historical_unverified_answer_f1": 0.262,
+      "historical_unverified_composite": 0.2463,
+      "legacy_gpt55_scpqa_P": 0.21958333333333332,
+      "legacy_gpt55_scpqa_R": 0.1710714285714286,
+      "legacy_gpt55_scpqa_F1": 0.13833004413886768,
+      "legacy_gpt55_scpqa_composite": 0.1300302414905356,
+      "legacy_gpt55_gt_q4_F1": 0.2074860392875099,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.1596270396270396
+    },
+    {
+      "method": "ReAct",
+      "historical_unverified_answer_f1": 0.3421,
+      "historical_unverified_composite": 0.32165,
+      "legacy_gpt55_scpqa_P": 0.3875,
+      "legacy_gpt55_scpqa_R": 0.18339285714285714,
+      "legacy_gpt55_scpqa_F1": 0.20007936507936508,
+      "legacy_gpt55_scpqa_composite": 0.18807460317460317,
+      "legacy_gpt55_gt_q4_F1": 0.13101332703954188,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.23787878787878788
+    },
+    {
+      "method": "ToT",
+      "historical_unverified_answer_f1": 0.41115,
+      "historical_unverified_composite": 0.38655,
+      "legacy_gpt55_scpqa_P": 0.4958333333333333,
+      "legacy_gpt55_scpqa_R": 0.2446428571428571,
+      "legacy_gpt55_scpqa_F1": 0.29040404040404044,
+      "legacy_gpt55_scpqa_composite": 0.272979797979798,
+      "legacy_gpt55_gt_q4_F1": 0.10838620049352217,
+      "new_two_judge_gt_q4_F1_after_rule_review": 0.2578821178821179
+    }
+  ],
+  "same_140_legacy_extractions_across_reference_versions": true,
+  "reference_version_pending_author_confirmation": true,
+  "historical_scores_reproduced_exactly": false,
+  "all_search_agents_rerun": false
+}

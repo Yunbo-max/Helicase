@@ -1,3 +1,5 @@
+> **执行状态更新（2026-10-03）：两版 reference 的旧算法复跑和 gt_q4 的新协议双 Judge 已完成。正式 reference 仍待确认。以下保留原执行要求，完成度以 [最新结果包](reproducibility/answer_eval_reference_audit_20261003/README_ZH.md) 为准。**
+
 # 旧评估：保留复合代理指标，并明确需要补做的实验
 
 版本 `complementary-evaluation-v1`。这是拟执行协议，不是新结果。来源：[历史代码](reproducibility/historical_q4_metric_20261003/eval_scpqa.py)、[公式审计](OLD_Q4_METRIC_ZH.md)。不要求完整 gold graph，也不修改 Helicase 核心算法。
