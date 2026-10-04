@@ -1,6 +1,6 @@
 # GPT-5.5 两组调用上限控制实验：实施状态
 
-更新时间：2026-10-04。**四次技术试运行已启动；正式运行 0/80，尚无本轮实验分数。**
+更新时间：2026-10-04。**四次技术试运行均已返回（三次完整，一次预算耗尽保留 partial）；80 次正式批次已启动，尚无本轮评分结果。**
 
 用户已确认使用现有 Codex GPT-5.5，统一模型调用及工具上限，token 仅实测、非严格匹配。仅比较 Q61–Q80 的 Helicase 与保留 KG 的 Uniform-planning，两次独立重复；四次技术试运行不进入正式统计。
 
@@ -16,9 +16,9 @@
 
 ## 当前运行与剩余步骤
 
-执行目录：`reviewer_analysis/revision_v2/private/planning_gpt55_v1`。首个启动任务为 `pilot/01/Q73/full`。实际进度以该目录的 `pilot_progress.json`、`formal_progress.json` 和各任务 `status.json` 为准，本文不是持续刷新的进度面板。
+执行目录：`reviewer_analysis/revision_v2/private/planning_gpt55_v1`。四次试运行共使用 94 次 Serper 请求，全部模型调用返回成功。Q61/uniform 的两路内部搜索在 CLI 额度耗尽时提前结束，经原始日志核验，保留 partial 标记及带哈希的功能审核记录。正式共享上限已冻结为每次 120 个模型 CLI 调用（含最终回答一次）、40 次搜索、75 次读页、3 次迭代、n=2。首个正式任务为 `formal/01/Q72/full`。实际进度以该目录的 `pilot_progress.json`、`formal_progress.json` 和各任务 `status.json` 为准，本文不是持续刷新的进度面板。
 
-四次试运行均通过功能检查后，按预先固定规则由用量确定正式共享上限；随后执行 80 次、统一评分并输出主表。**尚不能声称实验完成或 Helicase 显著领先。**
+原预检门在发现 partial 后停止，完成预算耗尽专项核验后继续；未修改研究代码、原始输出或原上限推导公式，也未查看答案得分。当前正在执行 80 次，之后统一评分并输出主表。**尚不能声称实验完成或 Helicase 显著领先。**
 
 模型额度单位是 CLI 调用，不是独立验证的内部 HTTP 请求数；实际 token 若缺失会明确标记未知，不按零处理。`planning_budget.py` 的严格 token 预留组件保留，但本次实测 token 实验不使用它宣称严格匹配。
 

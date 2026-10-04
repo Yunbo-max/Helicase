@@ -14,9 +14,9 @@ The user explicitly chose the existing Codex GPT-5.5 path with shared model-call
 - [x] Frozen source snapshots, questions-only input, fresh workers, paired randomized 4/80 schedules, explicit failures.
 - [x] New-report extraction, normalization and matching with frozen scpqa V4 references; usage separate from agent execution; per-query paired statistics.
 - [x] Software verification: 223 passed, 3 skipped; separate native synthetic integration: 2 passed. Real GPT-5.5 and updated Serper preflight succeeded.
-- [ ] Complete four technical pilots and inspect functionality/usage, without judging rankings.
-- [ ] Freeze shared caps using 1.25 times maximum observed pilot use, rounded upward to multiples of five, with documented minimums.
+- [x] Complete four technical pilots and inspect functionality/usage, without judging rankings. Three complete; Q61/uniform retains partial after a documented budget-only functional review.
+- [x] Freeze shared caps using the original rule: 120 model CLI invocations, 40 searches, 75 page attempts, one reserved final call; n=2 and three iterations unchanged.
 - [ ] Complete 80 fresh formal executions, preserving failed/partial outputs.
 - [ ] Evaluate all outputs, publish P/R/F1, query-level paired CI, repeat means/SD and actual resources.
 
-Four pilots have started in private/planning_gpt55_v1; formal execution has not started. Source hashes are frozen. Changes requiring a revised implementation must create a new experiment version, not silently replace already run records. See PLANNING_RUNBOOK_ZH.md and BUDGET_PLANNING_STATUS_ZH.md.
+All four pilots returned in private/planning_gpt55_v1; formal execution started with formal/01/Q72/full. The budget-only review and original log/output hashes are recorded in formal_config.json; partial output was not overwritten. Source hashes are frozen. Changes requiring a revised implementation must create a new experiment version, not silently replace already run records. See PLANNING_RUNBOOK_ZH.md and BUDGET_PLANNING_STATUS_ZH.md.
