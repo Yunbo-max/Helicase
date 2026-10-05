@@ -1,0 +1,113 @@
+{
+  "protocol": "unchanged_archived_q4_evaluator_new_80_reports_v1",
+  "model": "gpt-5.5",
+  "reference": "scpqa.jsonl",
+  "posthoc": true,
+  "executions": 80,
+  "methods": {
+    "full": {
+      "answer_precision": 0.4314974853577795,
+      "answer_recall": 0.37449404761904764,
+      "answer_f1": 0.3493918338463482,
+      "relation_proxy_f1": 0.34668857011866994,
+      "legacy_composite": 0.3483105283552769,
+      "structure_delta": -0.0010813054910713035,
+      "status_counts": {
+        "complete": 38,
+        "partial": 2
+      },
+      "audit_counts": {
+        "unknown_predicted": 0,
+        "unknown_reference": 0,
+        "many_predictions_to_one_reference": 5,
+        "one_prediction_to_many_references": 2,
+        "report_truncated": 40,
+        "predicted_items_truncated": 0,
+        "reference_items_truncated": 0,
+        "out_of_range": 0
+      },
+      "answer_f1_repeat_means": [
+        0.3815256965256965,
+        0.3172579711669999
+      ],
+      "answer_f1_repeat_sample_sd": 0.045444144412569026,
+      "legacy_composite_repeat_means": [
+        0.38135373197442907,
+        0.3152673247361248
+      ],
+      "legacy_composite_repeat_sample_sd": 0.046730146702460694
+    },
+    "uniform": {
+      "answer_precision": 0.346968338678865,
+      "answer_recall": 0.29580357142857144,
+      "answer_f1": 0.2944360521332908,
+      "relation_proxy_f1": 0.29221165094212465,
+      "legacy_composite": 0.29354629165682433,
+      "structure_delta": -0.000889760476466488,
+      "status_counts": {
+        "complete": 34,
+        "partial": 6
+      },
+      "audit_counts": {
+        "unknown_predicted": 0,
+        "unknown_reference": 0,
+        "many_predictions_to_one_reference": 4,
+        "one_prediction_to_many_references": 0,
+        "report_truncated": 40,
+        "predicted_items_truncated": 0,
+        "reference_items_truncated": 0,
+        "out_of_range": 0
+      },
+      "answer_f1_repeat_means": [
+        0.3089869281045752,
+        0.27988517616200653
+      ],
+      "answer_f1_repeat_sample_sd": 0.02057804614299907,
+      "legacy_composite_repeat_means": [
+        0.3099764902144106,
+        0.2771160930992381
+      ],
+      "legacy_composite_repeat_sample_sd": 0.023235809632621316
+    }
+  },
+  "paired": {
+    "answer_f1": {
+      "difference": 0.05495578171305738,
+      "ci95": [
+        -0.053287973751064366,
+        0.15903987288037483
+      ],
+      "n_queries": 20,
+      "n_boot": 10000,
+      "seed": 20261004
+    },
+    "legacy_composite": {
+      "difference": 0.05476423669845256,
+      "ci95": [
+        -0.05168857079286206,
+        0.15639289576086626
+      ],
+      "n_queries": 20,
+      "n_boot": 10000,
+      "seed": 20261004
+    }
+  },
+  "evaluation_usage": {
+    "cli_invocations": 185,
+    "selected_cli_invocations": 160,
+    "unused_cli_invocations": 25,
+    "selected_calls_with_reviewed_reconnect": 50,
+    "input_tokens": 1546868,
+    "output_tokens": 33691,
+    "unused_calls_without_exit_record": [
+      "d694a9317f8e4e4396e3f0ce0414de8d"
+    ]
+  },
+  "limitations": [
+    "Unchanged old extraction, truncation and unvalidated string matching; not one-to-one semantic F1.",
+    "Reference agreement and structure proxy do not measure independently verified world factuality.",
+    "Same requested GPT-5.5 for both arms; original historical judge and temperature are not reproduced.",
+    "Post-hoc evaluation; new-protocol results retained. No ranking-based retries, deletions or changes.",
+    "Post-freeze transport review accepts completed WebSocket reconnect traces, while preserving original rejected records and counting unused invocations."
+  ]
+}
