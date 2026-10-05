@@ -2,6 +2,8 @@
 
 本批仅包含预算控制版 Helicase（`full`）与保留 KG 的 Uniform-planning（`uniform`）。Q61–Q80，每组两次全新执行，共 80 次；另有 Q61/Q73 × 两组的四次技术试运行。原 SCQA、历史答案和 Q3 不修改。
 
+**该批已于 2026-10-05 完成执行、评分和数值核对。** [结果与离线复算入口](reproducibility/planning_gpt55_20261005/README_ZH.md)。查看结果无需重跑下方研究命令；正式共享上限已冻结为每次 120 次模型 CLI 调用、40 次搜索和75 次读页。
+
 ## 用户确认后的预算口径
 
 2026-10-04 用户明确选择：使用现有 Codex GPT-5.5 跑完，统一工具和调用上限，token 仅实测、非严格匹配。
@@ -65,3 +67,15 @@ EVALUATION_ROOT="$EXPERIMENT_ROOT/evaluation"
 ```
 
 结果写入 `per_execution.csv`、`per_query.csv`、`summary.json` 与 `summary_table.md`。没有报告的正式运行保留为零分；评估调用失败则保留失败记录并停止，不自动重试或当作有效零分。成功缓存不重复调用。
+
+## 本批的恢复及最终汇总口径
+
+80 次正式执行全部保留原输出；最后一次读页模型响应因冻结客户端对 Unicode 行分隔符的日志解析而被拒绝，原失败状态保留，没有补跑研究任务。其余调用/预算/编码异常见公开异常清单。
+
+评分首轮有一份 Q69 抽取未通过逐字引用校验。执行代理离线核对原因后用同一冻结输入补跑一次，仍为同一 `The/the` 大小写问题。两次原始无效响应留在 `evaluation/reviewed_failed_attempts/`。使用独立的 `quote_case_recovery.py` 对最早响应恢复两处可唯一定位的引用首词大小写，原答案项内容不改写，原校验器重新验证通过；79 份原成功缓存不变。该恢复属于明确记录的离线补充规则，不能描述成全部原始响应直接通过冻结协议。
+
+`evaluation/quote_case_recovery_manifest.json`、`quote_recovery_module_location_review.json` 保留来源、哈希、偏移和工具位置记录。恢复工具独立于冻结研究模块；研究模块哈希以及原评分 helper 哈希再次验证一致。新研究批次应另建版本和目录，不把本次补充步骤无声推广进已有冻结版本。
+
+原采集器 `summary.json` 统计 120 个最终任务记录；`reviewed_summary.json` 与公开 `summary.json` 按 CLI 调用 ID 合并保留的无效尝试，实际为 121 次评估调用。最早的原始尝试同时出现在归档和恢复后的记录中，只计一次。研究调用与评估调用分开。完整 CLI 用量不等于已独立核验所有内部重连或后端计费。
+
+公开 `verify_public.py` 只复算 CSV 公式、20 题配对区间、重复均值/SD、资源汇总和文件哈希；语义匹配对、原报告和底层用量核对仍依赖本地私有目录。完整本地数值核对记录为 `evaluation/independent_numerical_audit.json`。

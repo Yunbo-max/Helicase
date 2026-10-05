@@ -1,0 +1,39 @@
+{
+  "audited_at_utc": "2026-10-05T02:23:21.770688+00:00",
+  "executions": 80,
+  "queries": 20,
+  "maximum_matching_and_per_execution_scores_verified": true,
+  "macro_metrics_repeat_means_sample_sd_query_bootstrap_verified": true,
+  "agent_resource_ledger_join_verified": true,
+  "evaluation_usage_all_attempts": {
+    "distinct_cli_invocations": 121,
+    "cli_reported_input_tokens": 1767130,
+    "cli_reported_output_tokens": 201612,
+    "retained_invalid_attempt_records": 2,
+    "measurement_note": "Includes retained invalid attempts, deduplicated by CLI call ID. CLI reported usage is not independently attested total billing."
+  },
+  "source_hashes": {
+    "per_execution.json": "33608c379fa0a5101645d8033e0993b882df12719027a20bb6da9f7df867494e",
+    "summary.json": "dcece62663248c907ef55efac794986608938da5a507d83878e74befdf022a18",
+    "per_query.csv": "f26e1185fc41b658507e2f8d0482f43891bcc641cc59f853e4fef525fa2263ec",
+    "evaluation_freeze.json": "01ff5bc9e02d8a496efce5edbd5bed34a02672bba7d41ce8a4fda9972469cef4",
+    "quote_case_recovery_manifest.json": "bc7026145b6cc335c88fdb0ed99236ad75e008df771de460c0618295ad0c76bd"
+  },
+  "scope_limit": "Numerical, cardinality and provenance audit; not an independent human factuality adjudication of all semantic candidate pairs.",
+  "numerical_summary_sha256": "3219a6b5feda4ef97603b5dc9cf0f2075bb7d487ae05cac001a667276245af5f",
+  "software_tests": {
+    "passed": 229,
+    "skipped": 3,
+    "targeted_recovery_tests_passed": 6
+  },
+  "worker_error_category_counts": {
+    "budget_denial": 40,
+    "text_encoding": 10,
+    "codex_error_event": 2,
+    "codex_event_parser": 1,
+    "search_budget_denial": 50
+  },
+  "formal_search_http_200": 2410,
+  "formal_page_http_attempts": 5612,
+  "all_search_attempts_including_pilots_preflight": 2505
+}

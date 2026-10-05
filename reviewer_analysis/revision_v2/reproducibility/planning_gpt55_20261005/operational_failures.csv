@@ -1,0 +1,15 @@
+run_id,status,agent_failed_calls,worker_error_categories,native_failure_flags,control_issues,termination
+formal/01/Q77/uniform,complete,0,"{""text_encoding"": 2}",[],[],resource_limit
+formal/01/Q77/full,complete,0,"{""text_encoding"": 2}",[],[],resource_limit
+formal/01/Q79/uniform,complete,0,"{""text_encoding"": 2}",[],[],iteration_limit
+formal/01/Q66/uniform,partial,0,"{""budget_denial"": 9}","[""action:iter_3_search:failed_inner_searches:2/2""]",[],resource_limit
+formal/01/Q73/uniform,partial,0,"{""budget_denial"": 13}","[""action:iter_3_kg:unsuccessful_result"", ""action:iter_3_search:failed_inner_searches:2/2""]",[],resource_limit
+formal/01/Q67/uniform,partial,0,"{""budget_denial"": 8}","[""action:iter_3_search:failed_inner_searches:2/2""]",[],resource_limit
+formal/02/Q72/uniform,complete,0,"{""search_budget_denial"": 50}",[],[],resource_limit
+formal/02/Q64/uniform,partial,1,"{""codex_error_event"": 1}",[],[],resource_limit
+formal/02/Q73/full,partial,1,"{""budget_denial"": 2, ""codex_error_event"": 1, ""text_encoding"": 1}","[""action:iter_3_search:failed_inner_searches:1/2""]",[],resource_limit
+formal/02/Q73/uniform,partial,0,"{""budget_denial"": 6}","[""action:iter_3_search:failed_inner_searches:2/2""]",[],resource_limit
+formal/02/Q66/full,complete,0,"{""text_encoding"": 2}",[],[],iteration_limit
+formal/02/Q66/uniform,complete,0,"{""text_encoding"": 1}",[],[],resource_limit
+formal/02/Q76/full,partial,0,"{""budget_denial"": 2}","[""action:iter_3_search:failed_inner_searches:2/2""]",[],resource_limit
+formal/02/Q70/uniform,partial,1,"{""codex_event_parser"": 1}",[],[],iteration_limit
